@@ -342,27 +342,170 @@ h1,h2{color:var(--brand)}
 @media(prefers-reduced-motion:reduce){.btn,.tab,.opt{transition:none!important;transform:none!important}}
 
 @media print{.brand-mark,.brand-dot{display:none!important}}
+
+/* Readable, mathematically linear SVG plots: the viewBox follows the real container width. */
+.plot{min-width:0;background:#FFFFFF}
+.plot svg{display:block;width:100%;height:auto;background:#FFFFFF;font-family:Arial,"Liberation Sans",sans-serif}
+.plot svg text{font-family:Arial,"Liberation Sans",sans-serif;fill:#484453;font-variant-numeric:tabular-nums}
+.plot .plot-heading{padding:15px 16px 2px;display:flex;align-items:baseline;justify-content:space-between;gap:8px;flex-wrap:wrap}
+.plot .plot-heading h3{font-size:14px;margin:0;line-height:1.6}
+.plot .plot-heading p{font-size:11px;color:#626475;margin:0;line-height:1.7}
+.plot-key{display:flex;gap:9px 18px;flex-wrap:wrap;padding:9px 16px 0;font-size:11px;color:#4D4857;line-height:1.8}
+.plot-key span{display:inline-flex;gap:6px;align-items:center}
+.plot-key i{display:inline-block;width:17px;height:3px;border-radius:0;flex:none}
+.plot-key i.dot{width:8px;height:8px;border-radius:50%}
+.plot-key i.dashed{height:0;border-top:2px dashed #79628A;background:transparent!important}
+.plot-current{font-size:12px;line-height:1.9;padding:0 16px 6px;margin:0;color:#5C3574;font-weight:600;font-variant-numeric:tabular-nums}
+.plot-scale{font-size:11px;line-height:1.8;padding:0 16px 12px;margin:0;color:#626475}
+.plot-data{margin:0 13px 13px;font-size:11px;border-radius:7px;background:#FBF9FD;border-color:#E4DDEA;padding:8px 10px}
+.plot-data summary{font-size:11px;min-height:24px;display:list-item}
+.plot-data .tablewrap{margin-top:9px;border-radius:6px;background:white}
+.plot-data table{font-size:12px;table-layout:auto}
+.plot-data td,.plot-data th{padding:7px 8px;font-size:11px}
+.entry-welcome{display:flex;gap:28px;justify-content:space-between;align-items:center;padding:22px 24px;background:linear-gradient(115deg,#F6EFFA,#FDF3F8);border:1px solid #E4D3ED;border-radius:13px}
+.entry-welcome p{font-size:13px;line-height:1.8;color:#625269;max-width:800px;margin:0}
+.entry-welcome .entry-message{font-size:20px;line-height:1.5;color:#63318B;font-weight:700;margin-bottom:10px;letter-spacing:-.3px}
+.entry-badge{width:142px;flex:none;font-size:11px;text-align:center;color:#80598E;line-height:1.6}
+.entry-badge span{display:block;font-size:64px;color:#B22470;font-weight:700;line-height:1;margin-bottom:11px}
+.entry-progress{margin:20px 0 14px;font-size:13px;color:#60377D;font-weight:600;line-height:1.8}
+.entry-questions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}
+.entry-q{margin:0;padding:17px 16px 16px;border:1px solid #E3DCEB;border-radius:12px;min-width:0;background:#FEFDFE}
+.entry-q legend{font-size:14px;line-height:1.7;color:#3B3047;font-weight:600;padding:0 6px;max-width:100%}
+.entry-choices{display:grid;gap:8px}
+.entry-option{display:flex;align-items:center;gap:10px;min-height:44px;background:#FFFFFF;border:1px solid #E3DDE9;border-radius:7px;padding:9px 12px;cursor:pointer;font-size:13px;color:#57505F;line-height:1.7}
+.entry-option:hover{border-color:#A981C1;background:#FBF7FD}
+.entry-option:has(input:checked){background:#EEE5F6;border-color:#8F5AAF;color:#512470}
+.entry-option:has(input:focus-visible){outline:3px solid #B22470;outline-offset:3px}
+.entry-option input{accent-color:#6E309F;width:17px;height:17px;flex:none;margin:0}
+.entry-q:last-child{grid-column:1/-1}
+.entry-q:last-child .entry-choices{grid-template-columns:repeat(2,minmax(0,1fr))}
+.entry-bottom{margin-top:22px;padding-top:20px;border-top:1px solid #E5DDEC}
+.entry-bottom .note{margin-top:15px;margin-bottom:0;max-width:960px}
+@media screen and (max-width:900px){.entry-welcome .entry-message{font-size:18px}.entry-badge{width:100px}.entry-badge span{font-size:52px}}
+@media screen and (max-width:650px){.entry-questions{grid-template-columns:minmax(0,1fr)}.entry-q:last-child .entry-choices{grid-template-columns:minmax(0,1fr)}.entry-welcome{padding:17px;gap:12px}.entry-badge{display:none}.entry-welcome .entry-message{font-size:17px}.entry-welcome p{font-size:12px}.entry-q{padding:14px 12px}.entry-q legend{font-size:13px}.entry-option{font-size:12px}.plot-key{font-size:11px;gap:5px 13px;padding-left:11px;padding-right:11px}.plot .plot-heading{padding-left:11px;padding-right:11px}.plot .plot-heading h3{font-size:13px}.plot-current,.plot-scale{padding-left:11px;padding-right:11px}.plot-scale{font-size:10px}.plot-data{margin-left:9px;margin-right:9px}.plot-data td,.plot-data th{font-size:11px}.entry-progress{font-size:12px}}
+@media print{.entry-panel{display:none!important}}
+
+.lesson-next{margin-top:22px;padding-top:19px;border-top:1px solid #E3DCEB;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.lesson-next p{margin:0;max-width:710px}
+
+/* Practicum recovery: coarse input is not a locked instrument or a valid measurement. */
+#p7 .capture-warn{background:#FFF3F8;border-color:#C27BA2;color:#70334F}
+#p7 [id^=refine]{border-color:#9160B0;color:#613382;background:#F7F0FB}
+#p7 .experiment .confirm p{margin:0 0 12px;line-height:1.7}
+#p7 .experiment .confirm .buttons{align-items:stretch}
+#p7 .experiment .confirm .btn{white-space:normal}
+#p7 .experiment input[type=range]:disabled{cursor:not-allowed}
+
+/* Entry/exit learning comparison. Colour always accompanies a written status. */
+.learning-progress{margin-top:26px;padding-top:24px;border-top:2px solid #DFC7EA}
+.lp-heading{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:13px}
+.lp-heading h3{font-size:23px;line-height:1.4;margin:0;color:#4D286A}
+.lp-eyebrow{font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:#74468F;font-weight:700;margin-bottom:5px}
+.lp-count{font-size:11px;padding:7px 10px;border:1px solid #E2D3EB;border-radius:18px;color:#653B7F;background:#F8F3FC}
+.lp-summary{padding:16px 18px;background:#F6F0FA;border:1px solid #E2D4EB;border-radius:12px;font-size:13px;line-height:1.9;margin:14px 0;color:#493354}
+.lp-cards{display:grid;gap:14px}
+.lp-card{border:1px solid #E2D8E9;border-radius:12px;padding:18px;background:#FFFFFF;min-width:0}
+.lp-card h4{font-size:15px;line-height:1.7;margin:0 0 12px;color:#3E3049}
+.lp-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lp-answer{padding:13px 15px;background:#FAF7FC;border:1px solid #E8E0EE;border-radius:9px;min-width:0}
+.lp-answer:last-child{background:#F5F7FB;border-color:#E0E5EF}
+.lp-answer b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.04em;color:#6D477F;margin-bottom:6px}
+.lp-answer p{font-size:14px;color:#3C3445;line-height:1.75;margin:0;overflow-wrap:anywhere}
+.lp-result{margin:12px 0 0;font-size:13px;line-height:1.7;font-weight:600;color:#67417E;border-left:3px solid #A77BC2;padding-left:11px}
+.lp-result[data-state=improved]{color:#345D58;border-color:#568F87}
+.lp-result[data-state=work]{color:#883B60;border-color:#C17CA1}
+.lp-result[data-state=pending],.lp-result[data-state=no-entry],.lp-result[data-state=different],.lp-result[data-state=legacy-pair]{color:#62566B;border-color:#B4A3BE;font-weight:400}
+.lp-source{font-size:11px;color:#6C6173;margin:10px 0 0;line-height:1.7}
+.lp-entry-item{margin:14px 0;border-bottom:1px solid #E7DEED;padding-bottom:12px;font-size:13px;line-height:1.8;overflow-wrap:anywhere}
+.lp-entry-item:last-child{border:0;padding-bottom:0}
+.lp-entry-item b{display:block;color:#45324E}.lp-entry-item p{margin:4px 0 0}
+.lp-reflection{padding:20px;margin-top:20px;background:#FBF8FD;border:1px solid #E3D8EB;border-radius:12px}
+.lp-reflection h3{font-size:17px;line-height:1.6;margin-bottom:8px}
+.lp-reflection label{display:flex;flex-direction:column;gap:7px;font-size:13px;font-weight:600;color:#483950;margin-top:14px}
+.lp-reflection textarea,.lp-reflection select{width:100%;background:#FFFFFF;font-weight:400}
+.lp-reflection .note{margin:12px 0 0}
+.learning-progress>.buttons{margin-top:18px}.lp-honesty{margin-top:14px}
+.lp-repeat-label{display:inline-block;font-size:10px;font-weight:600;line-height:1.6;padding:4px 8px;border-radius:5px;background:#F3EAF9;color:#653B81;margin-bottom:10px}
+.lp-repeat-label.lp-new{background:#F0F3F8;color:#555E70}
+.lp-dialog{max-width:min(560px,calc(100vw - 28px));border:1px solid #BA92CF;border-radius:14px;padding:24px;color:#352C40;background:#FFFFFF;font:14px/1.8 Arial,"Liberation Sans",sans-serif;box-shadow:0 18px 65px #2B153A35}
+.lp-dialog::backdrop{background:#22122D88}.lp-dialog h3{font-size:20px;color:#55316C}.lp-dialog .buttons{margin-top:18px}
+#entryLegacyNote{margin:12px 0 0}#entryOverlapNote{margin:14px 0 0}
+#entryLockNote{margin:12px 0 0}#wsLearningProgress{margin-top:15px}#wsLearningProgress .lp-heading h3{font-size:18px}#wsLearningProgress .lp-card{padding:14px}
+@media screen and (max-width:650px){.lp-pair{grid-template-columns:minmax(0,1fr)}.lp-card{padding:14px}.lp-reflection{padding:15px}.lp-heading h3{font-size:21px}.lp-answer p{font-size:13px}.lp-summary{padding:14px}.lp-reflection label{font-size:12px}.lp-dialog{padding:19px}.lp-dialog .buttons{align-items:stretch}}
+@media print{.lp-dialog{display:none!important}}
+
+/* Rolling-resistance formation: scoped only to the new teaching animation. */
+.rf-lesson{margin:20px 0 26px;padding:20px;border:1px solid #DECEE9;border-radius:15px;background:#FEFCFF;min-width:0}
+.rf-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.rf-heading h3{font-size:23px;line-height:1.35;margin:0;color:#4D286A}
+.rf-eyebrow{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#725080;margin:0 0 6px}
+.rf-badge{font-size:11px;line-height:1.7;color:#5C3974;background:#F4EDF9;padding:7px 11px;border:1px solid #E5D8EE;border-radius:9px;max-width:100%}
+.rf-intro{font-size:14px;line-height:1.8;color:#483950;margin:0 0 15px}
+.rf-toolbar{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin:14px 0 18px}
+.rf-toolbar .buttons{gap:7px}
+.rf-toolbar .btn{transition:box-shadow .16s,transform .16s}
+.rf-toolbar .btn[aria-pressed=true]{background:#6E309F;color:#FFFFFF;border-color:#6E309F}
+.rf-toolbar .btn[aria-pressed=true]:hover:not(:disabled){background:#5D258B;color:#FFFFFF;border-color:#5D258B}
+.rf-check{display:flex;align-items:center;gap:8px;min-height:44px;font-size:12px;color:#584462;line-height:1.6}
+.rf-check input{accent-color:#6E309F;width:17px;height:17px;flex:none}
+.rf-grid{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);gap:15px;align-items:stretch}
+.rf-figure{margin:0;border:1px solid #DED5E6;background:#FFFFFF;border-radius:12px;overflow:hidden;min-width:0}
+.rf-figure-heading{padding:13px 14px 11px;border-bottom:1px solid #ECE5F1;min-height:76px}
+.rf-figure-heading h4{font-size:14px;line-height:1.6;margin:0 0 3px;color:#483250}
+.rf-figure-heading span{font-size:11px;color:#71607B;line-height:1.7;display:block}
+.rf-svg{display:block;width:100%;height:auto;font-family:Arial,"Liberation Sans",sans-serif}
+.rf-figure figcaption{padding:12px 14px;font-size:12px;line-height:1.8;color:#66586F;border-top:1px solid #E9E1EE;overflow-wrap:anywhere}
+.rf-figure figcaption p{margin:7px 0 0}.rf-figure figcaption p:first-child{margin:0}
+.rf-playbar{display:flex;align-items:center;justify-content:space-between;gap:9px;flex-wrap:wrap;padding:11px 13px;background:#FBF8FD;border-top:1px solid #ECE3F2}
+.rf-playbar .btn{min-height:44px}.rf-speed{font-size:11px;color:#75637F}
+.rf-track{height:3px;background:#E7DCEE}.rf-track>div{width:0;height:100%;background:#AD589D;transition:none}
+.rf-figure .rf-status{font-weight:600;color:#5A3475;min-height:1.8em}
+.rf-key{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:11px;color:#51415C;margin:0 0 9px}
+.rf-key span{display:inline-flex;align-items:center;gap:6px}.rf-key i{display:inline-block;height:3px;width:17px;flex:none}
+.rf-key-pressure{background:#C83083}.rf-key-normal{background:#0B759D}
+.rf-mode-note{margin:13px 0 12px;font-size:12px;line-height:1.8;color:#5A3A6D;background:#F5EFFA;border-left:3px solid #B280CA;padding:9px 12px;overflow-wrap:anywhere}
+.rf-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:12px 0 17px}
+.rf-metrics>div{border:1px solid #E4DAEC;border-radius:10px;padding:12px 13px;background:#FFFFFF;min-width:0}
+.rf-metrics span{display:block;color:#72617D;font-size:11px;line-height:1.6;margin-bottom:6px}
+.rf-metrics b{display:block;font-size:14px;line-height:1.6;color:#5F2F80;overflow-wrap:anywhere}
+.rf-steps{list-style:none;counter-reset:rf-step;padding:0;margin:15px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.rf-steps li{counter-increment:rf-step;position:relative;border-top:2px solid #D8BEE6;padding:13px 11px 0 35px;font-size:12px;line-height:1.8;color:#5A4A65;min-width:0}
+.rf-steps li::before{content:counter(rf-step);position:absolute;left:3px;top:13px;width:23px;height:23px;border-radius:50%;text-align:center;line-height:23px;background:#EEE1F5;color:#6E309F;font-weight:700}
+.rf-steps b{color:#493253}.rf-limit{font-size:12px;line-height:1.85;margin:17px 0 0;padding-top:13px;border-top:1px solid #E4D9EC;color:#68576F;overflow-wrap:anywhere}
+@media screen and (max-width:1000px){.rf-grid{grid-template-columns:minmax(0,1fr)}.rf-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.rf-figure-heading{min-height:0}.rf-steps{grid-template-columns:minmax(0,1fr)}}
+@media screen and (max-width:550px){.rf-lesson{padding:12px;margin-top:16px}.rf-heading h3{font-size:21px}.rf-intro{font-size:13px}.rf-badge{font-size:10px}.rf-toolbar .buttons{flex:1 1 100%}.rf-toolbar .btn{flex:1 1 120px;font-size:12px}.rf-grid{gap:12px}.rf-figure-heading{padding:11px}.rf-figure-heading h4{font-size:13px}.rf-playbar{padding:10px}.rf-playbar .buttons{width:100%}.rf-playbar .btn{flex:1}.rf-metrics{gap:8px}.rf-metrics>div{padding:10px}.rf-metrics b{font-size:13px}.rf-metrics span{font-size:11px}.rf-figure figcaption{padding:11px}.rf-steps li{padding-right:1px}}
+@media print{.rf-toolbar,.rf-playbar,.rf-track{display:none!important}}
 </style>
 </head>
 <body>
 <div class="app">
 <header class="masthead">
-  <div class="brand"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M10 49 51 28v21H10Z" fill="#FDEDF6" stroke="#6E309F" stroke-width="2"/><path d="m13 43 40-21" stroke="#E24096" stroke-width="4" stroke-linecap="round"/><path d="m28 19 13-7 10 17-13 7z" fill="#E24096"/><path d="m28 19 13 2 10 8-13 7z" fill="#B22470" opacity=".35"/><circle cx="14" cy="50" r="3" fill="#6E309F"/><circle cx="51" cy="50" r="3" fill="#6E309F"/></svg></div><p class="eyebrow">Цифровой практикум · физика / 10 класс</p><h1>ТрибоЛаб<span class="brand-dot">.</span></h1><p class="sub">От предсказания — к измерению. Восемь модулей к актуальному уроку: 16 слайдов, 30 минут.</p></div>
+  <div class="brand"><div class="brand-mark" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none"><path d="M10 49 51 28v21H10Z" fill="#FDEDF6" stroke="#6E309F" stroke-width="2"/><path d="m13 43 40-21" stroke="#E24096" stroke-width="4" stroke-linecap="round"/><path d="m28 19 13-7 10 17-13 7z" fill="#E24096"/><path d="m28 19 13 2 10 8-13 7z" fill="#B22470" opacity=".35"/><circle cx="14" cy="50" r="3" fill="#6E309F"/><circle cx="51" cy="50" r="3" fill="#6E309F"/></svg></div><p class="eyebrow">Цифровой практикум · физика / 10 класс</p><h1>ТрибоЛаб<span class="brand-dot">.</span></h1><p class="sub">От предсказания — к измерению. Девять разделов: стартовый опрос, опыты и личный рабочий лист. Урок — 30 минут.</p></div>
   <div class="toptools"><button class="btn ghost small" data-open-panel="p8">Мой рабочий лист →</button><span class="tag">Офлайн · g = 10 м/с²</span><label class="tempo" for="playbackRate">Темп анимации<select id="playbackRate"><option value="1">1× · обычный</option><option value="0.5">½× · медленнее</option><option value="0.25">¼× · подробно</option></select></label><button class="btn ghost small" id="motionToggle" type="button" aria-pressed="true">Анимация: включена</button></div>
 </header>
 <nav class="tabs" role="tablist" aria-label="Модули лаборатории">
-  <button class="tab" id="tab-p1" role="tab" aria-controls="p1" aria-selected="true" tabindex="0" data-p="p1"><span class="num">01</span>Брусок</button>
-  <button class="tab" id="tab-p2" role="tab" aria-controls="p2" aria-selected="false" tabindex="-1" data-p="p2"><span class="num">02</span>Наклонная плоскость</button>
-  <button class="tab" id="tab-p3" role="tab" aria-controls="p3" aria-selected="false" tabindex="-1" data-p="p3"><span class="num">03</span>Качение и среда</button>
-  <button class="tab" id="tab-p4" role="tab" aria-controls="p4" aria-selected="false" tabindex="-1" data-p="p4"><span class="num">04</span>Квиз</button>
-  <button class="tab" id="tab-p5" role="tab" aria-controls="p5" aria-selected="false" tabindex="-1" data-p="p5"><span class="num">05</span>Карта успеха</button>
-  <button class="tab" id="tab-p6" role="tab" aria-controls="p6" aria-selected="false" tabindex="-1" data-p="p6"><span class="num">06</span>Таймер</button>
-  <button class="tab" id="tab-p7" role="tab" aria-controls="p7" aria-selected="false" tabindex="-1" data-p="p7"><span class="num">07</span>Практикум</button>
-  <button class="tab" id="tab-p8" role="tab" aria-controls="p8" aria-selected="false" tabindex="-1" data-p="p8"><span class="num">08</span>Рабочий лист</button>
+  <button class="tab" id="tab-p0" role="tab" aria-controls="p0" aria-selected="true" tabindex="0" data-p="p0"><span class="num">01</span>Начальный квиз</button>
+  <button class="tab" id="tab-p1" role="tab" aria-controls="p1" aria-selected="false" tabindex="-1" data-p="p1"><span class="num">02</span>Брусок</button>
+  <button class="tab" id="tab-p2" role="tab" aria-controls="p2" aria-selected="false" tabindex="-1" data-p="p2"><span class="num">03</span>Наклонная плоскость</button>
+  <button class="tab" id="tab-p3" role="tab" aria-controls="p3" aria-selected="false" tabindex="-1" data-p="p3"><span class="num">04</span>Качение и среда</button>
+  <button class="tab" id="tab-p7" role="tab" aria-controls="p7" aria-selected="false" tabindex="-1" data-p="p7"><span class="num">05</span>Практикум</button>
+  <button class="tab" id="tab-p4" role="tab" aria-controls="p4" aria-selected="false" tabindex="-1" data-p="p4"><span class="num">06</span>Итоговый квиз</button>
+  <button class="tab" id="tab-p5" role="tab" aria-controls="p5" aria-selected="false" tabindex="-1" data-p="p5"><span class="num">07</span>Лист рефлексии</button>
+  <button class="tab" id="tab-p6" role="tab" aria-controls="p6" aria-selected="false" tabindex="-1" data-p="p6"><span class="num">08</span>Таймер</button>
+  <button class="tab" id="tab-p8" role="tab" aria-controls="p8" aria-selected="false" tabindex="-1" data-p="p8"><span class="num">09</span>Рабочий лист</button>
 </nav>
 <main>
-<section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-p1" tabindex="0">
-  <div class="panelhead"><div><div class="step">01 / сухое трение</div><h2>Когда трение «подстраивается»?</h2><p class="sub">Брусок изначально покоится. Тяга горизонтальна, направлена вправо. Сначала предскажи результат, затем проверь.</p></div><span class="pill">Слайды 6–7 · 7–10 мин</span></div>
+<section class="panel entry-panel" id="p0" role="tabpanel" aria-labelledby="tab-p0" tabindex="0">
+  <div class="panelhead"><div><div class="step">01 / вспомним перед опытами</div><h2>Что вы уже знаете о трении?</h2><p class="sub">Быстрый опрос в Mentimeter или устно.</p></div><span class="pill">Слайд 4 · 5:00–6:30</span></div>
+  <div class="entry-welcome"><div><p class="entry-message">Отвечаем все: ошибаться можно — это не контрольная.</p><p>Здесь — встроенный офлайн-вариант опроса. Выбери свой ответ; если сомневаешься, отметь «Пока не знаю». До перехода к опытам ответы можно менять. Баллов, отметок и рейтинга нет.</p></div><div class="entry-badge" aria-hidden="true"><span>?</span>Сначала — твоя гипотеза</div></div>
+  <p class="note" id="entryOverlapNote"></p>
+  <p class="callout" id="entryLegacyNote" hidden>Прежние ответы сохранены отдельно: «Итоговый квиз» → «Предыдущие ответы». Здесь — новый круг с четырьмя общими вопросами, без подмены старых формулировок.</p>
+  <p class="entry-progress" id="entryProgress" role="status">Отмечено 0 из 5. Начни с того, что уже знаешь.</p>
+  <div id="entryQuizBox" class="entry-questions"></div>
+  <div class="entry-bottom"><div class="buttons"><button class="btn" data-open-panel="p1">Перейти к опытам →</button><button class="btn ghost" id="entryQuizReset">Ответить на стартовые вопросы заново</button><button class="btn ghost" id="entryNewCycle" data-new-quiz-cycle hidden>Новый круг сравнения…</button></div><p class="note" id="entryLockNote"></p><p class="note">Ответы остаются только в этом браузере при доступном автосохранении; общий сбор ответов класса здесь не ведётся. Для Mentimeter учитель запускает свой опрос отдельно, а без устройств можно ответить устно. Итоговый квиз — отдельный раздел после практикума.</p></div>
+</section>
+
+<section class="panel" id="p1" role="tabpanel" aria-labelledby="tab-p1" tabindex="0" hidden>
+  <div class="panelhead"><div><div class="step">02 / сухое трение</div><h2>Когда трение «подстраивается»?</h2><p class="sub">Брусок изначально покоится. Тяга горизонтальна, направлена вправо. Сначала предскажи результат, затем проверь.</p></div><span class="pill">Слайды 6–7 · 7–10 мин</span></div>
   <div class="grid">
     <div class="stack">
       <figure class="diagram scene-card">
@@ -372,7 +515,7 @@ h1,h2{color:var(--brand)}
         <div class="scene-track" aria-hidden="true"><div id="scene1Progress"></div></div>
         <figcaption><p class="scene-status" id="scene1Status" role="status">Новая проба из покоя.</p>Перемещение: s = at²/2. Показан участок 5 м, затем стоп-кадр — не физическая остановка. Масштаб сцены и длины стрелок условные. Ящик с закреплённым грузом — одно тело.</figcaption>
       </figure>
-      <figure class="diagram"><canvas id="cv1g" width="900" height="390" role="img" aria-label="График модуля силы трения в серии проб из покоя">График Fтр(F).</canvas><figcaption>Каждая точка — отдельная проба из покоя. При μск &lt; μп после сдвига сила трения уменьшается скачком.</figcaption></figure>
+      <figure class="diagram"><div id="cv1g" class="plot"></div><figcaption>Каждая точка — отдельная проба из покоя. При μск &lt; μп после сдвига сила трения уменьшается скачком: закрашенная точка относится к покою на пороге, пустая — к предельному значению ветви скольжения сразу за порогом.</figcaption></figure>
     </div>
     <div class="stack">
       <div class="card controls">
@@ -390,7 +533,7 @@ h1,h2{color:var(--brand)}
   </div>
 </section>
 <section class="panel" id="p2" role="tabpanel" aria-labelledby="tab-p2" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">02 / угол покоя</div><h2>На каком угле начнётся скольжение?</h2><p class="sub">Плоскость поднимают медленно. Сила трения направлена вверх по склону, против возможного или начавшегося соскальзывания.</p></div><span class="pill">Слайды 8–9 · 10–13 мин</span></div>
+  <div class="panelhead"><div><div class="step">03 / угол покоя</div><h2>На каком угле начнётся скольжение?</h2><p class="sub">Плоскость поднимают медленно. Сила трения направлена вверх по склону, против возможного или начавшегося соскальзывания.</p></div><span class="pill">Слайды 8–9 · 10–13 мин</span></div>
   <div class="grid">
     <div class="stack"><figure class="diagram scene-card">
         <div class="scene-head"><div><span class="scene-eyebrow">Объёмная модель · 02</span><h3>Ящик на наклонной плоскости</h3></div><div class="scene-options"><label for="showForces2"><input type="checkbox" id="showForces2" data-view="forces" checked>Силы</label><label for="showMicro2"><input type="checkbox" id="showMicro2" data-view="micro" checked>Контакт</label></div></div>
@@ -398,7 +541,7 @@ h1,h2{color:var(--brand)}
         <div class="scene-playbar"><div class="buttons"><button class="btn small" id="scene2Play">Пауза опыта</button><button class="btn ghost small" id="scene2Replay">↺ Сначала</button></div><span class="scene-hint">Без автоматического повтора</span></div>
         <div class="scene-track" aria-hidden="true"><div id="scene2Progress"></div></div>
         <figcaption><p class="scene-status" id="scene2Status" role="status">Новая проба из покоя.</p>Плоскость одной длины при любом угле. Ящик ускоряется вниз по склону; в конце показанного участка — стоп-кадр без возврата к началу. Масштаб условный; груз закреплён, опрокидывание не моделируется. Численные силы — в результате справа / ниже.</figcaption>
-      </figure><figure class="diagram"><canvas id="cv2g" width="900" height="390" role="img" aria-label="График силы трения в зависимости от угла наклона">График Fтр(α).</canvas><figcaption>Серия независимых проб из покоя. При разных μп и μск на пороге есть скачок.</figcaption></figure></div>
+      </figure><figure class="diagram"><div id="cv2g" class="plot"></div><figcaption>Серия независимых проб из покоя. При разных μп и μск на пороге есть скачок: закрашенная точка — предельный покой, пустая — начало ветви скольжения при подходе справа.</figcaption></figure></div>
     <div class="stack"><div class="card controls">
       <div class="control"><label for="ra">Угол α <output id="va" for="ra">15°</output></label><input id="ra" type="range" min="0" max="60" step="0.5" value="15"></div>
       <div class="control"><label for="rmu2">Трение покоя μп <output id="vmu2" for="rmu2">0,50</output></label><input id="rmu2" type="range" min="0.1" max="1" step="0.05" value="0.5"></div>
@@ -411,9 +554,75 @@ h1,h2{color:var(--brand)}
   </div>
 </section>
 <section class="panel" id="p3" role="tabpanel" aria-labelledby="tab-p3" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">03 / три приложения</div><h2>Качение, вязкое трение и торможение</h2><p class="sub">Слайды 10–12. kкач — плечо сопротивления качению в метрах; β ≡ kсопр — коэффициент вязкого сопротивления, кг/с. Машинка с предельной скоростью — дополнительная модель, не обязательный результат урока.</p></div><span class="pill">13–18 мин</span></div>
+  <div class="panelhead"><div><div class="step">04 / три приложения</div><h2>Качение, вязкое трение и торможение</h2><p class="sub">Слайды 10–12. kкач — плечо сопротивления качению в метрах; β ≡ kсопр — коэффициент вязкого сопротивления, кг/с. Машинка с предельной скоростью — дополнительная модель, не обязательный результат урока.</p></div><span class="pill">13–18 мин</span></div>
   <h3>А. Сравниваем качение и скольжение</h3>
-  <div class="grid"><div class="stack"><figure class="diagram"><canvas id="cv3" width="900" height="380" role="img" aria-label="Сравнение силы сопротивления качению и силы трения скольжения">Сравнение сил.</canvas><figcaption>Одинаковая нормальная реакция N. Сопротивление качению: Fкач ≈ kкачN/R; момент сопротивления M ≈ kкачN.</figcaption></figure><div class="readout" id="ro3"></div></div>
+  <section class="rf-lesson" aria-labelledby="rfTitle">
+  <div class="rf-heading"><div><p class="rf-eyebrow">Посмотри в область контакта</p><h3 id="rfTitle">Откуда берётся трение качения?</h3></div><span class="rf-badge">Деформация → потери энергии → момент сопротивления</span></div>
+  <p class="rf-intro">Перед колесом материал сжимается, позади — восстанавливается. Если энергия возвращается не полностью, распределение давления несимметрично: результирующая реакция опоры <b>N</b> проходит <b>впереди центра</b> и создаёт момент против вращения.</p>
+  <div class="rf-toolbar"><div class="buttons" role="group" aria-label="Модель контакта"><button class="btn ghost small" id="rfReal" aria-pressed="true">С потерями энергии</button><button class="btn ghost small" id="rfIdeal" aria-pressed="false">Идеально упруго · без потерь</button></div><label class="rf-check" for="rfShowForces"><input id="rfShowForces" type="checkbox" checked>Показать реакцию и момент</label></div>
+  <div class="rf-grid">
+    <figure class="rf-figure">
+      <div class="rf-figure-heading"><h4>Колесо и деформируемая опора</h4><span>Вид сбоку · движение вправо</span></div>
+      <svg id="rfScene" class="rf-svg" viewBox="0 0 640 330" role="img" aria-labelledby="rfSceneTitle rfSceneDesc">
+        <title id="rfSceneTitle">Образование сопротивления качению</title><desc id="rfSceneDesc">Колесо движется вправо и вращается по часовой стрелке. Под ним опора прогибается; в модели с потерями позади восстанавливается медленнее. Фиолетовая дуга показывает момент сопротивления против вращения. Деформация увеличена для наглядности.</desc>
+        <defs>
+          <linearGradient id="rfSky" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F9F5FC"/><stop offset="1" stop-color="#EDF4F8"/></linearGradient>
+          <linearGradient id="rfGround" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#D8CBE4"/><stop offset="1" stop-color="#F0E8F6"/></linearGradient>
+          <radialGradient id="rfTyre"><stop stop-color="#546879"/><stop offset=".72" stop-color="#293C50"/><stop offset="1" stop-color="#172B3D"/></radialGradient>
+          <linearGradient id="rfRim" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F2F7FA"/><stop offset=".55" stop-color="#AEC0CE"/><stop offset="1" stop-color="#718A9D"/></linearGradient>
+          <clipPath id="rfWheelClip" clipPathUnits="userSpaceOnUse"><path id="rfClipPath" d="M0 0H640V248H0Z"/></clipPath>
+        </defs>
+        <rect width="640" height="330" fill="url(#rfSky)"/>
+        <path d="M40 49H159m-10-8 10 8-10 8" stroke="#354A60" fill="none" stroke-width="3" stroke-linecap="round"/><text x="178" y="57" fill="#354A60" font-size="36">v</text>
+        <path id="rfGroundPath" fill="url(#rfGround)" stroke="#90769F" stroke-width="2"/>
+        <g id="rfMaterialMarks" aria-hidden="true"></g>
+        <g id="rfHeatMarks" aria-hidden="true"></g>
+        <g clip-path="url(#rfWheelClip)"><g id="rfWheel">
+          <circle r="80" fill="url(#rfTyre)" stroke="#14283A" stroke-width="2"/>
+          <circle r="65" fill="none" stroke="#617587" stroke-width="1.5"/>
+          <circle r="54" fill="url(#rfRim)" stroke="#D5E2EC" stroke-width="3"/>
+          <g id="rfRotor" stroke="#344F67" stroke-width="6" stroke-linecap="round">
+            <path d="M0-45V45M-39-22.5 39 22.5M-39 22.5 39-22.5"/>
+            <circle cx="0" cy="-65" r="6" fill="#F7A6D1" stroke="#FDEDF6" stroke-width="2"/>
+          </g>
+          <circle r="15" fill="#6E309F" stroke="#DFD0EB" stroke-width="3"/>
+          <circle r="5" fill="#FFFFFF"/>
+        </g></g>
+        <path id="rfContactPatch" fill="none" stroke="#E24096" stroke-width="5" stroke-linecap="round"/>
+        <g id="rfMomentGroup"><path id="rfMomentArc" fill="none" stroke="#6E309F" stroke-width="3" stroke-linecap="round"/><path id="rfMomentTip" fill="#6E309F"/><text id="rfMomentLabel" x="610" y="50" fill="#57217F" font-size="36" text-anchor="end">Mсопр</text></g>
+      </svg>
+      <div class="rf-playbar"><div class="buttons"><button class="btn small" id="rfPlay" aria-pressed="false">Показать качение</button><button class="btn ghost small" id="rfReplay">↺ Сначала</button></div><span class="rf-speed">Темп — вверху страницы</span></div>
+      <div class="rf-track" aria-hidden="true"><div id="rfProgress"></div></div>
+      <figcaption><p class="rf-status" id="rfStatus" role="status">Готово к показу.</p>Равномерное качение: <b>s = Rθ</b>. Фиолетовая дуга — момент сопротивления, против вращения. Источник движения компенсирует потери; привод не показан. В конце участка — стоп-кадр, не физическая остановка. Деформация увеличена для наглядности; розовый след условно показывает переход энергии во внутреннюю, а не температуру. Масштаб геометрии условный.</figcaption>
+    </figure>
+    <figure class="rf-figure rf-contact">
+      <div class="rf-figure-heading"><h4>Почему появляется тормозящий момент?</h4><span>Увеличенная схема контакта</span></div>
+      <svg id="rfPressure" class="rf-svg" viewBox="0 0 520 330" role="img" aria-labelledby="rfPressureTitle rfPressureDesc">
+        <title id="rfPressureTitle">Распределение нормального давления</title><desc id="rfPressureDesc">Тонкие стрелки — нормальные реакции малых участков. При потерях передняя часть нагружена сильнее, их равнодействующая N смещена вперёд на плечо k. В идеально упругом контакте давление симметрично и момент сопротивления равен нулю. Ширина пятна и плечо условные.</desc>
+        <rect width="520" height="330" fill="#FDFBFE"/>
+        <path d="M38 205H482" fill="none" stroke="#9B8DA7" stroke-width="2"/>
+        <path id="rfPressureArea" fill="#FDEDF6" stroke="#C83083" stroke-width="2"/>
+        <g id="rfPressureArrows"></g>
+        <g id="rfContactPoints"></g>
+        <path d="M260 44V269" stroke="#85728F" stroke-width="1.7" stroke-dasharray="6 6"/><text x="260" y="31" text-anchor="middle" fill="#66546F" font-size="28">O</text>
+        <g id="rfNormalGroup"><path id="rfNormalArrow" fill="none" stroke="#0B759D" stroke-width="4" stroke-linecap="round"/><text id="rfNormalLabel" fill="#0B5576" font-size="32" font-weight="700">N</text><path id="rfArmLines" fill="none" stroke="#6E309F" stroke-width="2"/><text id="rfArmLabel" fill="#57217F" font-size="28" text-anchor="middle">k</text></g>
+        <text x="62" y="251" fill="#564861" font-size="28">сзади</text><text x="353" y="251" fill="#564861" font-size="28">впереди →</text>
+      </svg>
+      <figcaption><div class="rf-key"><span><i class="rf-key-pressure" id="rfPressureKey"></i>Реакции участков</span><span><i class="rf-key-normal"></i>N — их равнодействующая</span></div><p id="rfContactExplanation">При потерях энергии результирующая нормальная реакция смещена вперёд по движению.</p><p>O — проекция центра колеса. Плечо k увеличено для наглядности: схема не задаёт закон давления и размеры реального пятна контакта.</p></figcaption>
+    </figure>
+  </div>
+  <p class="rf-mode-note" id="rfModeNote">Анимация использует N, kкач и R из ползунков ниже.</p>
+  <div class="rf-metrics" aria-label="Расчёт для выбранной модели контакта">
+    <div><span>Плечо реакции</span><b id="rfKValue">k = 5 мм</b></div>
+    <div><span>Момент сопротивления</span><b id="rfMomentValue">M = Nk = 5 Н·м</b></div>
+    <div><span>Эквивалентная сила · против движения</span><b id="rfForceValue">← Fкач ≈ M/R = 16,67 Н</b></div>
+    <div><span>Потери на показанном пути</span><b id="rfEnergyValue" aria-live="off">ΔE = Mθ = 0 Дж</b></div>
+  </div>
+  <ol class="rf-steps"><li><b>Деформация.</b> Колесо и/или опора меняют форму в области контакта.</li><li><b id="rfEnergyStepTitle">Потери энергии.</b> <span id="rfEnergyStepText">Восстановление возвращает не всю затраченную энергию; часть переходит во внутреннюю энергию.</span></li><li><b id="rfMomentStepTitle">Сопротивление.</b> <span id="rfMomentStepText">N смещена вперёд: момент Nk направлен против вращения. Для сравнения с тягой используют Fкач ≈ Nk/R.</span></li></ol>
+  <p class="rf-limit">Важно: сама по себе деформация ещё не означает потерь. При идеально упругом симметричном контакте энергия возвращается полностью и сопротивления качению в этой модели нет. Fкач здесь — <b>эквивалент сопротивляющегося момента</b>, а не дополнительная сила, которую надо складывать с тем же моментом; это не универсальное значение силы трения покоя в контакте.</p>
+</section>
+
+  <div class="grid"><div class="stack"><figure class="diagram"><div id="cv3" class="plot"></div><figcaption>Одинаковая нормальная реакция N. Сопротивление качению: Fкач ≈ kкачN/R; момент сопротивления M ≈ kкачN.</figcaption></figure><div class="readout" id="ro3"></div></div>
     <div class="card controls">
       <div class="control"><label for="rN">Нормальная реакция N <output id="vN" for="rN">1000 Н</output></label><input id="rN" type="range" min="100" max="5000" step="100" value="1000"></div>
       <div class="control"><label for="rk">Плечо kкач <output id="vk" for="rk">0,005 м</output></label><input id="rk" type="range" min="0.001" max="0.02" step="0.001" value="0.005"></div>
@@ -425,8 +634,8 @@ h1,h2{color:var(--brand)}
   <hr class="divider"><h3>Б. Вязкое трение · слайд 11</h3>
   <div class="callout math"><b>Вязкое трение</b> возникает при взаимодействии тела с окружающей жидкой или газообразной средой. Сила направлена против скорости тела <b>относительно среды</b>. В линейной модели: Fс,x = −βvотн,x, где β ≡ kсопр, кг/с. Это не kкач в метрах. Линейная зависимость не универсальна; лодка и самолёт иллюстрируют среды, а не обязательную линейность сопротивления на любых скоростях.</div>
   <h3 style="margin-top:20px">Дополнительно: машинка с постоянной тягой</h3>
-  <p class="note">Необязательное расширение, вне основного тайминга 13–18 мин. Обозначение c = β/m, с⁻¹; задача о предельной скорости не входит в пятистрочную карту успеха.</p>
-  <div class="grid"><div class="stack"><figure class="diagram"><canvas id="cvDrag" width="900" height="320" role="img" aria-label="Машинка на дороге, скорость и пройденный путь">Машинка.</canvas><figcaption>Камера следует за машинкой. Дорога и колёса движутся согласованно: Rθ = s. Положение, скорость и время не сбрасываются при проходе разметки.</figcaption></figure><figure class="diagram"><canvas id="cvDragGraph" width="900" height="390" role="img" aria-label="График скорости v(t) с горизонтальной асимптотой v∞">График v(t).</canvas><figcaption>v(t) = (a₁/c)(1 − e⁻ᶜᵗ), v(0) = 0. Предельная скорость достигается асимптотически.</figcaption></figure></div>
+  <p class="note">Необязательное расширение, вне основного тайминга 13–18 мин. Обозначение c = β/m, с⁻¹; задача о предельной скорости не входит в пятистрочный лист рефлексии.</p>
+  <div class="grid"><div class="stack"><figure class="diagram"><canvas id="cvDrag" width="900" height="320" role="img" aria-label="Машинка на дороге, скорость и пройденный путь">Машинка.</canvas><figcaption>Камера следует за машинкой. Дорога и колёса движутся согласованно: Rθ = s. Положение, скорость и время не сбрасываются при проходе разметки.</figcaption></figure><figure class="diagram"><div id="cvDragGraph" class="plot"></div><figcaption>v(t) = (a₁/c)(1 − e⁻ᶜᵗ), v(0) = 0. Предельная скорость достигается асимптотически.</figcaption></figure></div>
     <div class="stack"><div class="card controls">
       <div class="control"><label for="ra1">Ускорение на старте a₁ <output id="va1" for="ra1">0,20 м/с²</output></label><input id="ra1" type="range" min="0.05" max="0.5" step="0.01" value="0.2"></div>
       <div class="control"><label for="rc">Коэффициент c = β/m <output id="vc" for="rc">0,10 с⁻¹</output></label><input id="rc" type="range" min="0.02" max="0.3" step="0.01" value="0.1"></div>
@@ -450,7 +659,7 @@ h1,h2{color:var(--brand)}
     <p>15 м — только тормозной путь, без пути реакции. Это учебная модель, не экспертиза реального ДТП. Пошаговая структура не означает обещания официальных баллов ЕГЭ.</p>
   </details>
   <h3>Исследуй: тормозной путь — не весь остановочный</h3>
-  <div class="grid"><div class="stack"><figure class="diagram"><canvas id="cvBrake" width="900" height="340" role="img" aria-label="Сравнение тормозных путей на сухой и мокрой дороге и на льду">Сравнение тормозных путей.</canvas><figcaption>Сравниваем при одной скорости: сухо μ = 0,6, мокро μ = 0,35, лёд μ = 0,1. Коэффициенты условные.</figcaption></figure><div class="readout" id="roBrake"></div></div>
+  <div class="grid"><div class="stack"><figure class="diagram"><div id="cvBrake" class="plot"></div><figcaption>Сравниваем при одной скорости: сухо μ = 0,6, мокро μ = 0,35, лёд μ = 0,1. Коэффициенты условные.</figcaption></figure><div class="readout" id="roBrake"></div></div>
     <div class="card controls">
       <div class="control"><label for="rv">Начальная скорость <output id="vv" for="rv">60 км/ч</output></label><input id="rv" type="range" min="0" max="120" step="5" value="60"></div>
       <p class="note">Выбранное покрытие:</p><div class="buttons" id="roadButtons"><button class="btn ghost" data-road="dry" aria-pressed="true">Сухой асфальт</button><button class="btn ghost" data-road="wet" aria-pressed="false">Мокрый асфальт</button><button class="btn ghost" data-road="ice" aria-pressed="false">Лёд</button></div>
@@ -458,31 +667,10 @@ h1,h2{color:var(--brand)}
       <div class="callout warn">sторм = v²/(2μg); sост = v·tреакции + sторм. Постоянное замедление μg, горизонтальная дорога. Скорость в формуле — в м/с; тормозной путь без времени реакции.</div>
     </div>
   </div>
-</section>
-<section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-p4" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">04 / проверка понимания</div><h2>Пять простых вопросов: что я понял?</h2><p class="sub">Без вычислений. У каждого вопроса — цель со слайда 3. После выбора появится объяснение; по одной попытке до перезапуска квиза.</p></div><span class="pill">25–27 мин</span></div>
-  <div class="callout quiz-purpose">Проверяем понимание: виды трения, роль трения в движении, сопротивление среды и торможение. Вычисления, график и опыт подтверждаются работой в листе, а не результатом этого квиза.</div>
-  <p class="statusline" id="quizMigrationStatus" role="status"></p>
-  <div id="quizBox"></div><div id="quizScore" class="readout stickyresult" role="status" aria-live="polite"></div><div class="buttons" style="margin-top:14px"><button class="btn ghost" id="quizReset">Пройти заново</button><button class="btn ghost" data-open-panel="p8">Вернуться к цели в рабочем листе</button></div><div class="quiz-goals" id="quizGoals" aria-label="Результат по целям"></div>
-</section>
-<section class="panel" id="p5" role="tabpanel" aria-labelledby="tab-p5" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">05 / рефлексия</div><h2>Карта успеха</h2><p class="sub">0 — пока нет; 1 — с подсказкой; 2 — уверенно. «Не оценено» не считается нулём. Заполните два независимых столбца.</p></div><span class="pill">27–29 мин · итог 29–30</span></div>
-  <div class="tablewrap"><table class="scoretable"><thead><tr><th scope="col">Критерий</th><th scope="col">Я</th><th scope="col">Сосед</th></tr></thead><tbody id="critBox"></tbody></table></div>
-  <div class="totals"><div class="readout" id="critSelf" aria-live="polite"></div><div class="readout" id="critPeer" aria-live="polite"></div></div>
-  <p class="note">Не складывайте столбцы и не прибавляйте к ним 10 баллов за практикум. При расхождениях попросите друг друга привести пример, а не просто изменить число.</p>
-  <label for="reflection" class="muted">Что получилось и что ещё хочу понять?</label><textarea id="reflection" placeholder="Мой вывод о трении…" maxlength="3000"></textarea>
-  <div class="buttons" style="margin-top:14px"><button class="btn ghost" id="scoreReset">Очистить оценки</button></div><p class="statusline" id="scoreStatus" role="status"></p>
-</section>
-<section class="panel" id="p6" role="tabpanel" aria-labelledby="tab-p6" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">06 / организация работы</div><h2>Таймер задания</h2><p class="sub">Работает при смене модулей. Отсчёт основан на времени завершения, а не на числе вызовов JavaScript.</p></div><span class="pill">Независим от практикума</span></div>
-  <div class="timerbox"><div id="timerDisplay" class="clock" role="timer" aria-live="off">05:00</div><p id="timerState" class="timer-phase" role="status">Готов к запуску</p><div class="track" role="progressbar" id="timerProgress" aria-label="Осталось времени в задании" aria-valuemin="0" aria-valuemax="300" aria-valuenow="300"><div class="fill" id="timerBar"></div></div>
-    <div class="buttons center"><button class="btn ghost" data-duration="60">1 мин</button><button class="btn ghost" data-duration="120">2 мин</button><button class="btn ghost" data-duration="180">3 мин</button><button class="btn ghost" data-duration="300">5 мин</button><button class="btn ghost" data-duration="420">7 мин</button><button class="btn ghost" data-duration="1800">30 мин</button></div>
-    <div class="buttons center" style="margin-top:17px"><button class="btn alt" id="btnTimer">Старт</button><button class="btn ghost" id="resetTimer">Сброс</button></div>
-    <label class="check"><input id="soundEnabled" type="checkbox">Звуковой сигнал при завершении</label>
-  </div><div class="callout">У практикума в модуле 7 <b>свой 7-минутный таймер</b>. Кнопки здесь не сбрасывают его, а таймер практикума не меняет выбранное время этого задания.</div>
+  <div class="lesson-next no-print"><p class="note">Следующий раздел: два способа измерить коэффициент трения покоя · 18–25 мин.</p><button class="btn" data-open-panel="p7">Перейти к практикуму →</button></div>
 </section>
 <section class="panel" id="p7" role="tabpanel" aria-labelledby="tab-p7" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">07 / эксперимент</div><h2>Два способа измерить μп</h2><p class="sub">Одна команда — одна пара поверхностей. По три измерения каждым способом; у каждого ученика — расчёт и собственный вывод.</p></div><span class="pill">Практикум внутри урока · 18–25 мин</span></div>
+  <div class="panelhead"><div><div class="step">05 / эксперимент</div><h2>Два способа измерить μп</h2><p class="sub">Одна команда — одна пара поверхностей. По три измерения каждым способом; у каждого ученика — расчёт и собственный вывод.</p></div><span class="pill">Практикум внутри урока · 18–25 мин</span></div>
   <div class="timerline no-print"><div class="timerbar"><div id="p7Clock" class="clock small" role="timer" aria-live="off">07:00</div><div class="buttons"><button class="btn" id="p7TimerToggle">Старт 7 минут</button><button class="btn ghost" id="p7TimerReset">Сброс таймера</button></div><span id="p7Step" class="timer-phase">Готов к инструктажу</span></div><div class="track" id="p7Progress" role="progressbar" aria-label="Осталось времени в практикуме" aria-valuemin="0" aria-valuemax="420" aria-valuenow="420"><div class="fill" id="p7Bar"></div></div><p class="note" style="margin:5px 0 0">Таймер не удаляет измерения и не запрещает закончить расчёт после сигнала.</p></div>
   <div class="procedure"><div class="item"><b>18:00–18:45</b>Инструктаж, роли</div><div class="item"><b>18:45–22:00</b>Две серии измерений</div><div class="item"><b>22:00–23:30</b>Расчёт и сравнение</div><div class="item"><b>23:30–25:00</b>Обмен выводами</div></div>
   <div class="callout">Измеряем <b>предельное трение покоя</b>: μп = Fmax/N и μп = tg α₀. Сила при равномерном скольжении даёт μск — её сюда не подставляем. В модели m = 1 кг, N = 10 Н. Для анимации первых сантиметров после сдвига принято μск = μп; измеряется только порог трения покоя.</div>
@@ -491,13 +679,15 @@ h1,h2{color:var(--brand)}
   <div class="grid" style="margin-top:16px">
     <div class="card experiment"><h3>А. Горизонтальная тяга</h3><figure class="diagram"><canvas id="cv7A" width="900" height="390" role="img" aria-label="Брусок, тяга и показание динамометра">Опыт с динамометром.</canvas><figcaption>Однократный сдвиг, затем стоп-кадр. Смещение показано крупно; показание порога удерживается до записи. Стоп-кадр не означает остановку тела.</figcaption></figure>
       <div class="control" style="margin-top:15px"><label for="rF7">Тяга F <output for="rF7" id="vF7">0,0 Н</output></label><div class="inputrow"><button class="btn ghost small" id="f7Minus" aria-label="Уменьшить тягу на 0,1 ньютона">−</button><input id="rF7" type="range" min="0" max="10" step="0.1" value="0"><button class="btn ghost small" id="f7Plus" aria-label="Увеличить тягу на 0,1 ньютона">+</button></div></div>
-      <p class="note">Начните с нуля. Около сдвига используйте «+» или стрелку → на клавиатуре: шаг 0,1 Н.</p><div id="captureA" class="capture" role="status">Найдите начало движения.</div>
-      <div class="buttons" style="margin-top:12px"><button class="btn alt" id="recordA" disabled>Записать измерение А</button><button class="btn ghost" id="retryA">Проба из покоя</button></div>
+      <p class="note">Начните с нуля. Двигайте ползунок; около сдвига используйте «+» или стрелку →: шаг 0,1 Н. При слишком крупном шаге можно вернуться назад или нажать «Уточнить порог».</p><div id="captureA" class="capture" role="status">Найдите начало движения.</div>
+      <div class="buttons" style="margin-top:12px"><button class="btn alt" id="recordA" disabled>Записать измерение А</button><button class="btn ghost" id="refineA" hidden>Уточнить порог</button><button class="btn ghost" id="retryA">Проба из покоя</button></div>
+      <div class="confirm no-print" id="restartAConfirm" role="group" aria-labelledby="restartATitle" hidden><p id="restartATitle"><b>Начать серию А заново?</b> Будут заменены только три измерения этого способа и его расчёт для текущей пары. Другой способ, остальные пары, вывод и рабочий лист сохранятся.</p><div class="buttons"><button class="btn danger" id="restartAYes">Да, начать серию А заново</button><button class="btn ghost" id="restartANo">Отмена</button></div></div>
     </div>
     <div class="card experiment"><h3>Б. Наклонная плоскость</h3><figure class="diagram"><canvas id="cv7B" width="900" height="600" role="img" aria-label="Наклонная плоскость, угломер и начало скольжения">Опыт с наклонной плоскостью.</canvas><figcaption>Ящик начинает скользить вниз. Анимация не повторяется; зафиксированный интервал не меняется. Новую пробу начинаем только по команде.</figcaption></figure>
       <div class="control" style="margin-top:15px"><label for="ra7">Угол α <output for="ra7" id="va7">0,0°</output></label><div class="inputrow"><button class="btn ghost small" id="a7Minus" aria-label="Уменьшить угол на 0,5 градуса">−</button><input id="ra7" type="range" min="0" max="60" step="0.5" value="0"><button class="btn ghost small" id="a7Plus" aria-label="Увеличить угол на 0,5 градуса">+</button></div></div>
-      <p class="note">Поднимайте медленно. Около начала скольжения используйте «+»: шаг 0,5°.</p><div id="captureB" class="capture" role="status">Найдите начало скольжения.</div>
-      <div class="buttons" style="margin-top:12px"><button class="btn alt" id="recordB" disabled>Записать измерение Б</button><button class="btn ghost" id="retryB">Проба из покоя</button></div>
+      <p class="note">Поднимайте медленно. Около начала скольжения используйте «+»: шаг 0,5°. При слишком крупном шаге управление не блокируется — вернитесь назад или уточните порог.</p><div id="captureB" class="capture" role="status">Найдите начало скольжения.</div>
+      <div class="buttons" style="margin-top:12px"><button class="btn alt" id="recordB" disabled>Записать измерение Б</button><button class="btn ghost" id="refineB" hidden>Уточнить порог</button><button class="btn ghost" id="retryB">Проба из покоя</button></div>
+      <div class="confirm no-print" id="restartBConfirm" role="group" aria-labelledby="restartBTitle" hidden><p id="restartBTitle"><b>Начать серию Б заново?</b> Будут заменены только три измерения этого способа и его расчёт для текущей пары. Другой способ, остальные пары, вывод и рабочий лист сохранятся.</p><div class="buttons"><button class="btn danger" id="restartBYes">Да, начать серию Б заново</button><button class="btn ghost" id="restartBNo">Отмена</button></div></div>
     </div>
   </div>
   <div class="card" style="margin-top:18px"><h3>Протокол команды</h3><p class="note">Приборы фиксируют интервал между последним покоем и первым движением. Записываем середину интервала, а не выдаём её за точное значение порога. Случайный шум не добавляется: одинаковые повторы в этой идеальной модели нормальны.</p>
@@ -512,10 +702,51 @@ h1,h2{color:var(--brand)}
     <details class="no-print"><summary>Текст протокола для копирования, если загрузка CSV недоступна</summary><pre class="exporttext" id="exportText7"></pre></details>
   </div>
   <div class="callout warn" style="margin-top:17px">Реальный опыт: тяга горизонтальна; доска закреплена; брусок не падает; предел прибора не превышен. В реальном классе две пары учеников выполняют способы А и Б параллельно. В виртуальном опыте — по очереди на одном устройстве.</div>
-  <p class="note" style="margin-top:12px">Значения μ в модели условные, не эталоны реальных материалов. Справка Сириуса — ориентир только при совпадении пары и условий; для пластика в исходной таблице данных нет. Сначала повторите вывод соседей, затем задайте вопрос.</p><p class="note">Критерии практикума: измерения — 3; расчёт — 3; сопоставление и вывод — 2; безопасность и команда — 2. Эти 10 баллов не прибавляются к карте успеха урока.</p>
+  <p class="note" style="margin-top:12px">Значения μ в модели условные, не эталоны реальных материалов. Справка Сириуса — ориентир только при совпадении пары и условий; для пластика в исходной таблице данных нет. Сначала повторите вывод соседей, затем задайте вопрос.</p><p class="note">Критерии практикума: измерения — 3; расчёт — 3; сопоставление и вывод — 2; безопасность и команда — 2. Эти 10 баллов не прибавляются к баллам листа рефлексии урока.</p>
+  <div class="lesson-next no-print"><p class="note">После измерений и собственного вывода — пять коротких вопросов на понимание.</p><button class="btn" data-open-panel="p4">Перейти к итоговому квизу →</button></div>
+</section>
+<section class="panel" id="p4" role="tabpanel" aria-labelledby="tab-p4" tabindex="0" hidden>
+  <div class="panelhead"><div><div class="step">06 / проверка понимания</div><h2>Пять ситуаций: выбери и объясни</h2><p class="sub">Четыре вопроса повторяют вход, один — новая ситуация. Выбери ответ с верным объяснением. У каждого вопроса — цель со слайда 3. После выбора появится объяснение; по одной попытке до перезапуска квиза.</p></div><span class="pill">25–27 мин</span></div>
+  <div class="callout quiz-purpose">Проверяем понимание: виды трения, роль трения в движении, сопротивление среды и торможение. Вычисления, график и опыт подтверждаются работой в листе, а не результатом этого квиза.</div>
+  <p class="statusline" id="quizMigrationStatus" role="status"></p>
+  <div id="quizBox"></div><div id="quizScore" class="readout stickyresult" role="status" aria-live="polite"></div><div class="buttons" style="margin-top:14px"><button class="btn ghost" id="quizReset">Пройти заново</button><button class="btn ghost" data-open-panel="p8">Вернуться к цели в рабочем листе</button></div><div class="quiz-goals" id="quizGoals" aria-label="Результат по целям"></div>
+  <section class="learning-progress" aria-labelledby="learningProgressTitle">
+  <div class="lp-heading"><div><p class="lp-eyebrow">Не отметка, а изменение понимания</p><h3 id="learningProgressTitle">Мой прогресс: вход → выход</h3></div><span class="lp-count" id="learningProgressCount">4 общих вопроса · 1 новый на выходе</span></div>
+  <p class="note" id="learningProgressIntro">В итоговом квизе повторяются вопросы о покое бруска, росте тяги, роликах и торможении. Сравни не только варианты, но и свои объяснения. Новый вопрос не выдаётся за прирост по старому.</p>
+  <div id="learningProgressSummary" class="lp-summary" role="status"></div>
+  <div id="learningProgressCards" class="lp-cards"></div>
+  <details id="entryAnswersDetails"><summary>Все мои ответы на входе</summary><div id="entryAnswersReview"></div></details>
+  <details id="firstExitDetails" hidden><summary>Все мои первые ответы на выходе</summary><p class="note">Включая новую ситуацию. Повторная тренировка не заменяет эти ответы.</p><div id="firstExitReview"></div></details>
+  <details id="quizArchiveBox" hidden><summary>Предыдущие ответы — до обновления вопросов</summary><div id="quizArchiveReview"></div></details>
+  <div class="lp-reflection"><h3>Как я сам оцениваю свой прогресс?</h3><p class="note">Это те же поля, что в разделе 7 рабочего листа: запись здесь и в листе синхронизируется. Программа не пишет вывод за тебя.</p>
+    <label for="progressGoalResult">Моя самооценка<select id="progressGoalResult" data-progress-ws="goalResult"><option value="">Пока не оценено</option><option value="yes">Да, объясняю самостоятельно</option><option value="partly">Частично, ещё нужна подсказка</option><option value="notyet">Пока нет, хочу разобраться</option></select></label>
+    <label for="progressGoalEvidence">Что изменилось в моём понимании — и почему?<textarea id="progressGoalEvidence" data-progress-ws="goalEvidence" maxlength="1200" placeholder="Раньше я думал(а)… Теперь могу объяснить… Мне помог опыт / пример…"></textarea></label>
+    <label for="progressQuestion">Что ещё хочу разобрать?<textarea id="progressQuestion" data-progress-ws="question" maxlength="800" placeholder="Мой вопрос или следующий шаг"></textarea></label>
+    <p class="note">Самооценка и собственное объяснение сохраняются в рабочем листе и его JSON-копии. Сами пары ответов «вход — выход» входят в читаемый результат HTML / печать, но не в JSON полей листа.</p>
+  </div>
+  <div class="buttons no-print"><button class="btn ghost" data-open-panel="p8">Сохранить результат и сравнение в листе →</button><button class="btn ghost" id="progressNewCycle" data-new-quiz-cycle>Новый круг сравнения…</button></div>
+  <p class="note lp-honesty">Для сравнения удерживается первый ответ на выходе. Кнопка «Пройти заново» даёт тренировку, но не переписывает исходный вход и первый выход. Пропуск не равен ошибке. Этот блок не доказывает достижение всех целей урока.</p>
+</section>
+
+</section>
+<section class="panel" id="p5" role="tabpanel" aria-labelledby="tab-p5" tabindex="0" hidden>
+  <div class="panelhead"><div><div class="step">07 / рефлексия</div><h2>Лист рефлексии</h2><p class="sub">0 — пока нет; 1 — с подсказкой; 2 — уверенно. «Не оценено» не считается нулём. Заполните два независимых столбца.</p></div><span class="pill">27–29 мин · итог 29–30</span></div>
+  <div class="tablewrap"><table class="scoretable"><thead><tr><th scope="col">Критерий</th><th scope="col">Я</th><th scope="col">Сосед</th></tr></thead><tbody id="critBox"></tbody></table></div>
+  <div class="totals"><div class="readout" id="critSelf" aria-live="polite"></div><div class="readout" id="critPeer" aria-live="polite"></div></div>
+  <p class="note">Не складывайте столбцы и не прибавляйте к ним 10 баллов за практикум. При расхождениях попросите друг друга привести пример, а не просто изменить число.</p>
+  <label for="reflection" class="muted">Что получилось и что ещё хочу понять?</label><textarea id="reflection" placeholder="Мой вывод о трении…" maxlength="3000"></textarea>
+  <div class="buttons" style="margin-top:14px"><button class="btn ghost" id="scoreReset">Очистить оценки</button></div><p class="statusline" id="scoreStatus" role="status"></p>
+</section>
+<section class="panel" id="p6" role="tabpanel" aria-labelledby="tab-p6" tabindex="0" hidden>
+  <div class="panelhead"><div><div class="step">08 / организация работы</div><h2>Таймер задания</h2><p class="sub">Работает при смене модулей. Отсчёт основан на времени завершения, а не на числе вызовов JavaScript.</p></div><span class="pill">Независим от практикума</span></div>
+  <div class="timerbox"><div id="timerDisplay" class="clock" role="timer" aria-live="off">05:00</div><p id="timerState" class="timer-phase" role="status">Готов к запуску</p><div class="track" role="progressbar" id="timerProgress" aria-label="Осталось времени в задании" aria-valuemin="0" aria-valuemax="300" aria-valuenow="300"><div class="fill" id="timerBar"></div></div>
+    <div class="buttons center"><button class="btn ghost" data-duration="60">1 мин</button><button class="btn ghost" data-duration="120">2 мин</button><button class="btn ghost" data-duration="180">3 мин</button><button class="btn ghost" data-duration="300">5 мин</button><button class="btn ghost" data-duration="420">7 мин</button><button class="btn ghost" data-duration="1800">30 мин</button></div>
+    <div class="buttons center" style="margin-top:17px"><button class="btn alt" id="btnTimer">Старт</button><button class="btn ghost" id="resetTimer">Сброс</button></div>
+    <label class="check"><input id="soundEnabled" type="checkbox">Звуковой сигнал при завершении</label>
+  </div><div class="callout">У практикума <b>свой 7-минутный таймер</b>. Кнопки здесь не сбрасывают его, а таймер практикума не меняет выбранное время этого задания.</div>
 </section>
 <section class="panel worksheet" id="p8" role="tabpanel" aria-labelledby="tab-p8" tabindex="0" hidden>
-  <div class="panelhead"><div><div class="step">08 / мой электронный рабочий лист</div><h2>Бортовой журнал исследователя</h2><p class="sub">Заполняй по ходу урока. Переключайся к моделям и возвращайся сюда — записи остаются. Это не дополнительное задание сверх 30 минут.</p></div><span class="pill">Личная работа · слайды 1–16</span></div>
+  <div class="panelhead"><div><div class="step">09 / мой электронный рабочий лист</div><h2>Бортовой журнал исследователя</h2><p class="sub">Заполняй по ходу урока. Переключайся к моделям и возвращайся сюда — записи остаются. Это не дополнительное задание сверх 30 минут.</p></div><span class="pill">Личная работа · слайды 1–16</span></div>
   <div class="ws-goals"><div><b>Главная цель</b><p>Объяснить, когда трение помогает, а когда мешает движению.</p></div><div><b>Применение</b><p>Оценить тормозной путь автомобиля и объяснить вывод.</p></div></div>
   <div class="ws-toolbar no-print"><div><b id="wsProgress">Заполнено 0 из 20 опорных полей</b><p class="note">Это полнота записи, не отметка. Числа и объяснения проверяем отдельно.</p></div><div class="buttons"><button class="btn" id="wsExport">Скачать результат HTML</button><button class="btn ghost" id="wsPrint">Печать / PDF</button></div></div>
   <p class="statusline" id="wsSaveStatus" role="status">Ответы хранятся только в этом браузере, если доступно автосохранение. В сеть они не отправляются.</p>
@@ -529,7 +760,7 @@ h1,h2{color:var(--brand)}
     <div class="ws-grid"><label for="ws-useful">Мой пример полезного трения<textarea id="ws-useful" data-ws="useful" maxlength="800" placeholder="Что именно помогает сделать трение?"></textarea></label><label for="ws-harmful">Мой пример мешающего трения<textarea id="ws-harmful" data-ws="harmful" maxlength="800" placeholder="Как можно уменьшить его действие?"></textarea></label></div>
   </div>
   <div class="card ws-section">
-    <div class="ws-sectionhead"><h3>2. Задача 2: трение покоя и скольжения</h3><button class="btn ghost small" data-open-panel="p1">Открыть модель 1</button></div>
+    <div class="ws-sectionhead"><h3>2. Задача 2: трение покоя и скольжения</h3><button class="btn ghost small" data-open-panel="p1">К горизонтальной тяге</button></div>
     <p class="goal-label">Цель «Научимся»: считать силу трения покоя и скольжения.</p>
     <p>m = 2 кг; μп = μск = 0,5; g = 10 м/с². Тяга горизонтальна. Каждая проба начинается из покоя.</p>
     <div class="ws-numbers"><label for="ws-normal">N, Н<input id="ws-normal" data-ws="normal" type="text" inputmode="decimal" maxlength="20" placeholder="Мой расчёт"></label><label for="ws-limit">Предел трения покоя, Н<input id="ws-limit" data-ws="limit" type="text" inputmode="decimal" maxlength="20"></label></div>
@@ -538,14 +769,14 @@ h1,h2{color:var(--brand)}
     <details><summary>Навигатор, если трудно</summary><p>Сначала найди нормальную реакцию и предел μпN. Пока тяга не превышает предел, трение может её уравновесить. Для скольжения используется μскN. Равенство пределу само по себе не требует движения.</p></details>
   </div>
   <div class="card ws-section">
-    <div class="ws-sectionhead"><h3>3. Коэффициент и угол покоя</h3><button class="btn ghost small" data-open-panel="p2">Открыть модель 2</button></div>
+    <div class="ws-sectionhead"><h3>3. Коэффициент и угол покоя</h3><button class="btn ghost small" data-open-panel="p2">К наклонной плоскости</button></div>
     <p class="goal-label">Цель «Научимся»: находить коэффициент трения μ.</p>
     <p>Брусок начинает соскальзывать при критическом угле α₀ = 30°. Доску поднимают медленно; других сил, кроме тяжести, реакции опоры и трения, нет.</p>
     <div class="ws-grid"><label for="ws-incline">Мой результат μп ≈<input id="ws-incline" data-ws="incline" type="text" inputmode="decimal" maxlength="20" placeholder="Без единиц"></label><label for="ws-massWhy">Почему критический угол не зависит от массы? <span class="optional">по желанию</span><textarea id="ws-massWhy" data-ws="massWhy" maxlength="800"></textarea></label></div>
     <details><summary>Навигатор</summary><p>На пороге mg sin α₀ = μп mg cos α₀. Сократи одинаковые множители. В калькуляторе выбери градусы.</p></details>
   </div>
   <div class="card ws-section">
-    <div class="ws-sectionhead"><h3>4. Гром-камень и сопротивление среды</h3><button class="btn ghost small" data-open-panel="p3">Открыть модели 3</button></div>
+    <div class="ws-sectionhead"><h3>4. Гром-камень и сопротивление среды</h3><button class="btn ghost small" data-open-panel="p3">К качению и среде</button></div>
     <p class="goal-label">Цели: объяснять роль трения; понимать силу сопротивления жидкости и газа.</p>
     <label for="ws-rolling">Почему шаровые опоры облегчили перевозку Гром-камня?<textarea id="ws-rolling" data-ws="rolling" maxlength="800" placeholder="Какой вид движения заменили каким? Исчезло ли трение совсем?"></textarea></label>
     <label for="ws-drag">Сопротивление воды направлено…<select id="ws-drag" data-ws="drag"><option value="">Выбери направление</option><option value="against">против скорости лодки относительно воды</option><option value="along">по скорости лодки относительно воды</option><option value="up">всегда вверх</option></select></label>
@@ -560,20 +791,21 @@ h1,h2{color:var(--brand)}
     <div class="buttons"><button class="btn ghost" id="wsCheck">Сверить заполненные числа и выборы</button></div><div class="readout" id="wsCheckResult" aria-live="polite">Сначала запиши свои ответы. Текстовые объяснения обсуждаем с учителем; программа не выставляет за них отметку.</div>
   </div>
   <div class="card ws-section">
-    <div class="ws-sectionhead"><h3>6. Мой итог практикума · 18–25 мин</h3><button class="btn ghost small" data-open-panel="p7">Открыть практикум 7</button></div>
+    <div class="ws-sectionhead"><h3>6. Мой итог практикума · 18–25 мин</h3><button class="btn ghost small" data-open-panel="p7">Открыть практикум</button></div>
     <p class="goal-label">Цель «Научимся»: находить коэффициент трения двумя способами.</p>
-    <p class="note">Измерения остаются в протоколе модуля 7. Здесь — твой индивидуальный результат и вывод, а не вторая копия шести измерений.</p>
+    <p class="note">Измерения остаются в протоколе практикума. Здесь — твой индивидуальный результат и вывод, а не вторая копия шести измерений.</p>
     <div class="buttons"><button class="btn ghost" id="wsImportPractice">Взять мои проверенные результаты из практикума</button></div><p class="statusline" id="wsPracticeStatus" role="status"></p>
     <div class="ws-numbers three"><label for="ws-surface">Пара поверхностей<input id="ws-surface" data-ws="surface" type="text" maxlength="150"></label><label for="ws-muA">Мой μА<input id="ws-muA" data-ws="muA" type="text" inputmode="decimal" maxlength="20"></label><label for="ws-muB">Мой μБ<input id="ws-muB" data-ws="muB" type="text" inputmode="decimal" maxlength="20"></label></div>
     <label for="ws-practiceConclusion">Согласуются ли способы с учётом разброса и разрешения? Почему?<textarea id="ws-practiceConclusion" data-ws="practiceConclusion" maxlength="1200"></textarea></label>
-    <p class="note">Одинаковые повторы не означают нулевую погрешность. Баллы практикума и два столбца карты успеха не складываются.</p>
+    <p class="note">Одинаковые повторы не означают нулевую погрешность. Баллы практикума и два столбца листа рефлексии не складываются.</p>
   </div>
   <div class="card ws-section">
     <h3>7. Возвращаемся к цели</h3><p class="goal-label">Проверь себя: можешь ли объяснить роль трения и вывод о торможении?</p>
-    <div class="buttons"><button class="btn" data-open-panel="p4">Итоговый квиз: 5 простых вопросов</button><button class="btn ghost" data-open-panel="p5">Открыть карту успеха</button></div>
+    <div class="buttons"><button class="btn" data-open-panel="p4">Итоговый квиз: 5 ситуаций</button><button class="btn ghost" data-open-panel="p5">Открыть лист рефлексии</button></div>
     <div class="ws-grid"><label for="ws-goalResult">Достигнута ли моя цель?<select id="ws-goalResult" data-ws="goalResult"><option value="">Пока не оценено</option><option value="yes">Да, объясняю самостоятельно</option><option value="partly">Частично, ещё нужна подсказка</option><option value="notyet">Пока нет, хочу разобраться</option></select></label><label for="ws-goalEvidence">Доказательство: что я теперь могу объяснить?<textarea id="ws-goalEvidence" data-ws="goalEvidence" maxlength="1200" placeholder="Приведи пример или укажи своё решение — не только «всё понял»."></textarea></label></div>
     <label for="ws-question">Мой вопрос учителю <span class="optional">если остался</span><textarea id="ws-question" data-ws="question" maxlength="800"></textarea></label>
     <div class="readout" id="wsQuizSummary">Квиз ещё не пройден.</div>
+    <div id="wsLearningProgress" aria-label="Сравнение моих ответов на входе и выходе"></div>
   </div>
   <details class="ws-homework"><summary>Домашнее задание на выбор — после урока</summary>
     <label for="ws-homeLevel">Выбираю уровень<select id="ws-homeLevel" data-ws="homeLevel"><option value="">Не выбран</option><option value="base">База: книга у стены</option><option value="standard">Стандарт: наклонная тяга</option><option value="study">Исследование с бруском</option></select></label>
@@ -591,10 +823,11 @@ h1,h2{color:var(--brand)}
   </div>
 </section>
 </main>
-<footer class="footer"><span>ТрибоЛаб · Версия 3.3 · Объёмные сцены · Arial · Все ресурсы внутри файла</span><span id="storageStatus" role="status">Проверка автосохранения…</span></footer>
+<footer class="footer"><span>ТрибоЛаб · Версия 3.7 · Объёмные сцены · Arial · Все ресурсы внутри файла</span><span id="storageStatus" role="status">Проверка автосохранения…</span></footer>
 <noscript><p>Для интерактивных опытов нужен JavaScript. Скачайте HTML-файл и откройте его в современном браузере.</p></noscript>
 </div>
 <div id="worksheetPrint"></div>
+<dialog id="newCycleDialog" class="lp-dialog" aria-labelledby="newCycleTitle"><h3 id="newCycleTitle">Начать новый круг сравнения?</h3><p>Будут очищены только ответы входного и итогового квизов, зафиксированный вход и первый выход. Если нужен прежний результат, сначала сохрани его через рабочий лист в HTML или PDF.</p><p>Измерения, таймеры, оценки, рефлексия, архив прежних ответов и все поля рабочего листа останутся. Собственную самооценку в листе при новом уроке пересмотри самостоятельно.</p><div class="buttons"><button class="btn danger" id="newCycleYes">Да, начать новый круг</button><button class="btn ghost" id="newCycleNo">Отмена</button></div></dialog>
 <script>(() => {
 'use strict';
 const $ = id => document.getElementById(id);
@@ -602,9 +835,10 @@ const $$ = sel => Array.from(document.querySelectorAll(sel));
 const G = 10, EPS = 1e-9, KEY = 'tribolab.corrected.v3';
 const CONTENT_REVISION = 'worksheet-conceptual-quiz-1';
 const VISUAL_REVISION = 'natural-scenes-v1';
+const LAB_REVISION = 'rolling-resistance-formation-v1';
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const CRITERIA_REVISION = 'braking-v1';
-const QUIZ_REVISION = "understanding-goals-v1";
+const QUIZ_REVISION = "understanding-transfer-v2";
 const PANEL_IDS = $$('[data-p]').map(b=>b.dataset.p);
 const C = {ink:'#262733',muted:'#626475',cyan:'#E24096',amber:'#6E309F',green:'#0193D2',red:'#B22470',line:'#DBDDE9',bg:'#FFFFFF'};
 const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
@@ -702,11 +936,11 @@ const SURF = Object.freeze({
  rubber:{name:'Резина / сухой асфальт',mu:.65,reference:'В справке для шины / сухого асфальта: 0,5–0,7. Это ориентир, не эталон измеренного здесь коэффициента трения покоя.'}
 });
 const ROADS={dry:{name:'Сухой асфальт',mu:.6,color:C.amber},wet:{name:'Мокрый асфальт',mu:.35,color:C.cyan},ice:{name:'Лёд',mu:.1,color:C.muted}};
-const QUIZ=[{"id": "walking", "q": "Какое трение помогает человеку идти, не проскальзывая?", "o": ["Трение покоя между обувью и землёй", "Трение качения", "Сопротивление воздуха"], "a": 0, "e": "Трение покоя между обувью и землёй помогает оттолкнуться без проскальзывания. Это пример полезного трения.", "goal": "Объяснить, когда трение помогает, а когда мешает движению", "goal_group": "СМОЖЕМ", "goal_id": "use", "goal_short": "Объяснить, когда трение помогает движению"}, {"id": "rest", "q": "Брусок тянут, но он неподвижен. Какое трение действует?", "o": ["Трение скольжения", "Трение покоя", "Трение качения"], "a": 1, "e": "Пока поверхности не скользят друг относительно друга, действует трение покоя. Оно может уравновешивать тягу до своего предела.", "goal": "Виды трения: покой, скольжение, качение", "goal_group": "УЗНАЕМ", "goal_id": "types", "goal_short": "Различать трение покоя, скольжения и качения"}, {"id": "wheels", "q": "Зачем при перевозке груза используют колёса и ролики?", "o": ["Чтобы заменить скольжение качением и уменьшить сопротивление", "Чтобы полностью убрать любое трение", "Чтобы увеличить массу груза"], "a": 0, "e": "В обычных условиях колёса и ролики заменяют скольжение качением и уменьшают сопротивление. Трение при этом не исчезает полностью.", "goal": "Объяснить, когда трение помогает, а когда мешает движению", "goal_group": "СМОЖЕМ", "goal_id": "use", "goal_short": "Объяснить, как уменьшить мешающее движению трение"}, {"id": "water", "q": "Куда направлено сопротивление воды движущейся лодке?", "o": ["По движению лодки относительно воды", "Против движения лодки относительно воды", "Всегда вертикально вверх"], "a": 1, "e": "Сопротивление направлено против скорости лодки относительно воды. Важно сравнивать движение тела именно со средой.", "goal": "Сила сопротивления в жидкости и газе", "goal_group": "УЗНАЕМ", "goal_id": "medium", "goal_short": "Объяснить действие сопротивления жидкости и газа"}, {"id": "braking", "q": "При той же скорости где тормозной путь больше: на сухой или скользкой дороге?", "o": ["На сухой дороге, где трение больше", "На скользкой дороге, где трение меньше", "Одинаков при любом трении"], "a": 1, "e": "При одинаковой начальной скорости и прочих равных меньшее трение даёт большее расстояние торможения. На скользкой дороге скорость нужно снижать заранее.", "goal": "Оценить тормозной путь автомобиля", "goal_group": "СМОЖЕМ", "goal_id": "braking", "goal_short": "Качественно оценить тормозной путь автомобиля"}];
+const QUIZ=[{"id": "pull-harder", "q": "Брусок тянут горизонтально всё сильнее, но он ещё неподвижен. Как меняется сила трения?", "o": ["Растёт вместе с тягой, пока брусок в покое", "Сразу равна μпN и больше не меняется", "Уменьшается по мере приближения к сдвигу"], "a": 0, "e": "При покое сила трения уравновешивает горизонтальную тягу. Поэтому она растёт вместе с ней до предела μпN; этот предел не равен силе при любой тяге.", "goal": "Считать силу трения покоя и скольжения", "goal_group": "НАУЧИМСЯ", "goal_id": "force", "goal_short": "Связать силу трения покоя с равновесием"}, {"id": "rest", "q": "Брусок тянут вправо, но он неподвижен. Что верно о трении?", "o": ["Трение скольжения направлено влево", "Трение покоя направлено влево и уравновешивает тягу", "Трения нет, ведь брусок ещё не движется"], "a": 1, "e": "Без относительного скольжения действует трение покоя. Оно направлено влево и уравновешивает тягу вправо, пока её может удержать.", "goal": "Виды трения: покой, скольжение, качение", "goal_group": "УЗНАЕМ", "goal_id": "types", "goal_short": "Различать вид трения и объяснять его направление"}, {"id": "wheels", "q": "Груз поставили на свободные ролики: тянуть стало легче, а масса та же. Почему?", "o": ["Скольжение заменили качением: сопротивление обычно меньше, но не равно нулю", "Ролики уменьшили силу тяжести груза", "На роликах исчезают все потери на трение"], "a": 0, "e": "Ролики заменяют скольжение качением. При подходящих условиях сопротивление меньше, но не исчезает; неизменная масса не означает неизменное сопротивление.", "goal": "Объяснить, когда трение помогает, а когда мешает движению", "goal_group": "СМОЖЕМ", "goal_id": "use", "goal_short": "Объяснить уменьшение мешающего движению трения"}, {"id": "water", "q": "Лодку несёт однородное течение; относительно воды она неподвижна. Что верно о сопротивлении воды в модели урока?", "o": ["Оно направлено против скорости относительно берега", "Оно равно нулю: нет движения относительно воды", "Оно направлено по течению при любой скорости лодки"], "a": 1, "e": "Сопротивление в модели связано со скоростью относительно воды, а не берега. При нулевой относительной скорости оно равно нулю. Это не отменяет другие силы, например силу Архимеда.", "goal": "Сила сопротивления в жидкости и газе", "goal_group": "УЗНАЕМ", "goal_id": "medium", "goal_short": "Применить понятие скорости относительно среды"}, {"id": "braking", "q": "На горизонтальной дороге два одинаковых автомобиля тормозят с одной скорости. При прочих равных на мокром покрытии трение меньше. Как изменится тормозной путь?", "o": ["Уменьшится: колёса легче скользят", "Увеличится: меньше трение — меньше замедление", "Не изменится, ведь начальная скорость та же"], "a": 1, "e": "На горизонтальной дороге при прочих равных меньшее трение даёт меньшее замедление, а при той же начальной скорости — больший тормозной путь. Путь реакции здесь не сравниваем.", "goal": "Оценить тормозной путь автомобиля", "goal_group": "СМОЖЕМ", "goal_id": "braking", "goal_short": "Объяснить связь трения, замедления и тормозного пути"}];
 const CRIT=["Объясняю виды трения своими словами","Считаю силу трения покоя и скольжения","Нахожу μп и угол покоя","Обосновываю решение задачи о торможении","Слушаю команду и помогаю другим"];
 const emptyPair=()=>({a:[],b:[],guessA:'',guessB:'',conclusion:'',revealed:false});
 const practice=Object.fromEntries(Object.keys(SURF).map(k=>[k,emptyPair()]));
-let active='p1',motion=!reducedMotion.matches,road='dry',surf='wood';
+let active='p0',motion=!reducedMotion.matches,road='dry',surf='wood';
 const view={rate:1,forces:true,micro:true};
 let run1=true,run2=true;
 let quiz=QUIZ.map(()=>null),scores={self:CRIT.map(()=>null),peer:CRIT.map(()=>null)},reflection='';
@@ -734,6 +968,7 @@ function load(){
  try{localStorage.setItem(KEY+'.probe','1');localStorage.removeItem(KEY+'.probe');storageOK=true;const txt=localStorage.getItem(KEY);if(txt){try{cached=JSON.parse(txt);}catch(_){cached=null;}}}catch(_){storageOK=false;}
  if(!cached||cached.version!==3){storageLabel();return;}
  if(PANEL_IDS.includes(cached.active))active=cached.active;
+ restoreEntryQuiz(cached.entryQuiz);
  if(typeof cached.motion==='boolean')motion=cached.motion&&!reducedMotion.matches;
  if([.25,.5,1].includes(cached.view?.rate))view.rate=cached.view.rate;
  for(const key of ['forces','micro'])if(typeof cached.view?.[key]==='boolean')view[key]=cached.view[key];
@@ -747,7 +982,7 @@ function load(){
  }
  if(finite(cached.exactAngle)&&cached.exactAngle>=0&&cached.exactAngle<=60){exactAngle=cached.exactAngle;$('ra').step='any';$('ra').value=String(exactAngle);}
  if(cached.quizRevision===QUIZ_REVISION&&Array.isArray(cached.quiz))quiz=QUIZ.map((q,i)=>Number.isInteger(cached.quiz[i])&&cached.quiz[i]>=0&&cached.quiz[i]<q.o.length?cached.quiz[i]:null);
- else if(Array.isArray(cached.quiz)&&cached.quiz.some(v=>v!==null))output('quizMigrationStatus','Квиз заменён простыми вопросами на понимание. Прежние ответы сброшены только в квизе; измерения, оценки и другие записи сохранены.');
+ else if(Array.isArray(cached.quiz)&&cached.quiz.some(v=>v!==null))output('quizMigrationStatus','Формулировки обновлены: прежние ответы сохранены отдельно в блоке «Предыдущие ответы». Их номера не подставлены в новые вопросы. Лист, измерения и оценки не менялись.');
  for(const who of ['self','peer'])if(Array.isArray(cached.scores?.[who]))scores[who]=CRIT.map((_,i)=>[0,1,2].includes(cached.scores[who][i])?cached.scores[who][i]:null);
  // Migrate only a genuinely older criterion. Worksheet/quiz updates must not erase valid braking scores.
  const brakingScoresAreCurrent=cached.criteriaRevision===CRITERIA_REVISION||['current-braking-arial-1',CONTENT_REVISION].includes(cached.contentRevision);
@@ -765,13 +1000,14 @@ function load(){
  }
  taskTimer.restore(cached.timers?.task);practiceTimer.restore(cached.timers?.practice);
  if(typeof cached.sound==='boolean')$('soundEnabled').checked=cached.sound;
+ restoreLearningProgress(cached.learningProgress,cached);
  storageLabel();
 }
 function save(immediate=false){
  clearTimeout(saveTask);
  const persist=()=>{
   if(!storageOK)return;
-  try{localStorage.setItem(KEY,JSON.stringify({version:3,contentRevision:CONTENT_REVISION,visualRevision:VISUAL_REVISION,view,criteriaRevision:CRITERIA_REVISION,quizRevision:QUIZ_REVISION,worksheet,active,motion,road,surf,exactAngle,controls:Object.fromEntries(RANGE_IDS.map(id=>[id,read(id)])),quiz,scores,reflection,practice,timers:{task:taskTimer.snapshot(),practice:practiceTimer.snapshot()},sound:$('soundEnabled').checked}));}
+  try{localStorage.setItem(KEY,JSON.stringify({version:3,contentRevision:CONTENT_REVISION,visualRevision:VISUAL_REVISION,view,criteriaRevision:CRITERIA_REVISION,quizRevision:QUIZ_REVISION,entryQuiz:{revision:entryRevision,answers:entryAnswers},learningProgress,worksheet,active,motion,road,surf,exactAngle,controls:Object.fromEntries(RANGE_IDS.map(id=>[id,read(id)])),quiz,scores,reflection,practice,timers:{task:taskTimer.snapshot(),practice:practiceTimer.snapshot()},sound:$('soundEnabled').checked}));}
   catch(_){storageOK=false;storageLabel();}
  };
  if(immediate)persist();else saveTask=setTimeout(persist,160);
@@ -786,21 +1022,131 @@ function clearCanvas(id){
  ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,W,H);ctx.textBaseline='alphabetic';ctx.textAlign='left';ctx.lineWidth=2;
  return {ctx,W,H};
 }
-function text(ctx,txt,x,y,color=C.ink,size=20,align='left',bold=false){ctx.fillStyle=color;ctx.font=`${bold?'700':'400'} ${size}px Arial, "Liberation Sans", sans-serif`;ctx.textAlign=align;ctx.fillText(txt,x,y);}
-function arrow(ctx,x,y,dx,dy,color){const len=Math.hypot(dx,dy);if(len<.1)return;const a=Math.atan2(dy,dx),head=Math.min(11,len*.4);ctx.strokeStyle=color;ctx.fillStyle=color;ctx.lineWidth=4;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+dx,y+dy);ctx.stroke();ctx.beginPath();ctx.moveTo(x+dx,y+dy);ctx.lineTo(x+dx-head*Math.cos(a-.5),y+dy-head*Math.sin(a-.5));ctx.lineTo(x+dx-head*Math.cos(a+.5),y+dy-head*Math.sin(a+.5));ctx.closePath();ctx.fill();}
-function circle(ctx,x,y,color,filled=true,r=6){ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fillStyle=filled?color:C.bg;ctx.fill();ctx.strokeStyle=color;ctx.lineWidth=2;ctx.stroke();}
-function plotAxes(ctx,W,H,xmax,ymax,xlabel,ylabel,xTicks=5){
- const l=87,r=W-46,t=48,b=H-67,w=r-l,h=b-t;
- const sx=x=>l+x/xmax*w,sy=y=>b-y/ymax*h;
- ctx.lineWidth=1;ctx.strokeStyle=C.line;
- for(let i=0;i<=4;i++){const y=t+i*h/4;ctx.beginPath();ctx.moveTo(l,y);ctx.lineTo(r,y);ctx.stroke();const val=ymax*(1-i/4);text(ctx,n(val,val<1?2:1),l-12,y+6,C.muted,17,'right');}
- for(let i=0;i<=xTicks;i++){const x=l+i*w/xTicks;ctx.beginPath();ctx.moveTo(x,b);ctx.lineTo(x,t);ctx.stroke();const val=xmax*i/xTicks;text(ctx,n(val,val<1&&val!==0?2:0),x,b+26,C.muted,17,'center');}
- ctx.strokeStyle=C.muted;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(l,t);ctx.lineTo(l,b);ctx.lineTo(r,b);ctx.stroke();
- text(ctx,xlabel,(l+r)/2,H-13,C.muted,18,'center');ctx.save();ctx.translate(22,(t+b)/2);ctx.rotate(-Math.PI/2);text(ctx,ylabel,0,0,C.muted,18,'center');ctx.restore();
- return {l,r,t,b,sx,sy};
+// Linear, responsive SVG charts. Labels are calculated from the tick values, never rounded independently of their positions.
+const Charts=(()=>{
+ const states=new Map(),cache=new Map();
+ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const tidy=x=>Number(Number(x).toPrecision(12));
+ const digitsFor=step=>{for(let d=0;d<=12;d++){const v=step*10**d;if(v>=1-1e-9&&Math.abs(v-Math.round(v))<=1e-9*Math.max(1,Math.abs(v)))return d;}return 12;};
+ function fixedScale(max,step,required=max){
+  positive(max,step);requireNumbers(required);
+  const digits=digitsFor(step),ticks=[];
+  for(let i=0;i<=Math.floor(max/step+1e-9);i++){const value=tidy(i*step);ticks.push({value,label:n(value,digits)});}
+  return {min:0,max:tidy(max),step:tidy(step),required,digits,ticks};
+ }
+ function scale(required,target=5){
+  requireNumbers(required,target);if(required<0)throw new RangeError('Отрицательный диапазон шкалы');
+  const need=required||1,wanted=clamp(Math.round(target),2,8),raw=need/wanted,mag=10**Math.floor(Math.log10(raw));
+  const candidates=[1,2,5,10].map(v=>v*mag);
+  const step=candidates.reduce((a,b)=>Math.abs(Math.log(b/raw))<Math.abs(Math.log(a/raw))?b:a);
+  const count=Math.max(1,Math.ceil(need/step-1e-10));return fixedScale(tidy(count*step),step,need);
+ }
+ function dimensions(id,bars=0){
+  const el=$(id),W=Math.max(240,Math.round(el.getBoundingClientRect().width||680)),small=W<430;
+  const H=bars?(small?bars*80+100:bars*65+132):small?304:390;
+  return {W,H,small,l:bars?(small?30:153):(small?63:77),r:W-(bars?(small?73:91):23),t:bars?24:35,b:H-(bars?69:65),font:small?12:14};
+ }
+ const xMap=(p,xs,x)=>p.l+(p.r-p.l)*(x-xs.min)/(xs.max-xs.min);
+ const yMap=(p,ys,y)=>p.b-(p.b-p.t)*(y-ys.min)/(ys.max-ys.min);
+ function xAxis(p,xs,label){
+  let s='';
+  for(const tick of xs.ticks){const x=xMap(p,xs,tick.value);s+=`<g class="plot-x-tick" data-value="${tick.value}"><line x1="${x}" y1="${p.t}" x2="${x}" y2="${p.b}" stroke="#E2E4ED"/><text x="${x}" y="${p.b+25}" text-anchor="middle" font-size="${p.font}">${esc(tick.label)}</text></g>`;}
+  s+=`<line x1="${p.l}" y1="${p.b}" x2="${p.r}" y2="${p.b}" stroke="#716878" stroke-width="1.5"/><text x="${(p.l+p.r)/2}" y="${p.H-13}" text-anchor="middle" font-size="${p.font}">${esc(label)}</text>`;
+  return s;
+ }
+ function axes(p,xs,ys,xlabel,ylabel){
+  let s=xAxis(p,xs,xlabel);
+  for(const tick of ys.ticks){const y=yMap(p,ys,tick.value);s+=`<g class="plot-y-tick" data-value="${tick.value}"><line x1="${p.l}" y1="${y}" x2="${p.r}" y2="${y}" stroke="#E2E4ED"/><text x="${p.l-11}" y="${y+4}" text-anchor="end" font-size="${p.font}">${esc(tick.label)}</text></g>`;}
+  return s+`<line x1="${p.l}" y1="${p.t}" x2="${p.l}" y2="${p.b}" stroke="#716878" stroke-width="1.5"/><text x="17" y="${(p.t+p.b)/2}" transform="rotate(-90 17 ${(p.t+p.b)/2})" text-anchor="middle" font-size="${p.font}">${esc(ylabel)}</text>`;
+ }
+ function heading(title,subtitle=''){return `<div class="plot-heading"><h3>${esc(title)}</h3><p>${esc(subtitle)}</p></div>`;}
+ function legend(items=[]){return `<div class="plot-key">${items.map(x=>`<span><i aria-hidden="true" class="${x.kind||''}" style="background:${x.color}"></i>${esc(x.label)}</span>`).join('')}</div>`;}
+ function table(id,data){
+  return `<details class="plot-data"><summary>Опорные значения — таблица</summary><div class="tablewrap"><table aria-label="${esc(data.title||'Опорные значения графика')}"><thead><tr>${data.headers.map(x=>`<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${data.rows.map(row=>`<tr>${row.map(x=>`<td>${esc(x)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></details>`;
+ }
+ function line(id,spec){
+  const p=dimensions(id),xs=spec.xFixed?fixedScale(spec.xFixed.max,p.small?spec.xFixed.smallStep:spec.xFixed.step):scale(spec.xRequired,clamp(Math.floor((p.r-p.l)/88),2,7));
+  const ys=scale(spec.yRequired,p.small?4:5),key=JSON.stringify([p.W,p.H,spec.key,xs.max,xs.step,ys.max,ys.step]);
+  if(cache.get(id)!==key){
+   let drawing=axes(p,xs,ys,spec.xLabel,spec.yLabel);
+   for(const guide of spec.guides||[]){
+    if(finite(guide.x)){const x=xMap(p,xs,guide.x);drawing+=`<line class="plot-threshold" data-value="${guide.x}" x1="${x}" y1="${p.t}" x2="${x}" y2="${p.b}" stroke="#80628F" stroke-dasharray="5 5" stroke-width="1.3"/>`;}
+    if(finite(guide.y)){const y=yMap(p,ys,guide.y);drawing+=`<line class="plot-asymptote" data-value="${guide.y}" x1="${p.l}" y1="${y}" x2="${p.r}" y2="${y}" stroke="#80628F" stroke-dasharray="5 5" stroke-width="1.3"/>`;}
+   }
+   for(const series of spec.series(xs)){
+    const d=series.points.map(([x,y],i)=>(i?'L':'M')+xMap(p,xs,x).toFixed(3)+' '+yMap(p,ys,y).toFixed(3)).join(' ');
+    drawing+=`<path data-series="${esc(series.name)}" d="${d}" fill="none" stroke="${series.color}" stroke-width="2.6" stroke-linejoin="round"/>`;
+   }
+   for(const dot of spec.boundaries||[]){drawing+=`<circle data-boundary="${dot.filled?'closed':'open'}" data-x="${dot.x}" data-y="${dot.y}" cx="${xMap(p,xs,dot.x)}" cy="${yMap(p,ys,dot.y)}" r="4.8" fill="${dot.filled?dot.color:'#FFFFFF'}" stroke="${dot.color}" stroke-width="2"/>`;}
+   drawing+='<circle data-current-point="true" r="5.6" fill="#6E309F" stroke="#FFFFFF" stroke-width="1.6"/>';
+   $(id).innerHTML=heading(spec.title,spec.subtitle)+legend(spec.legend)+`<svg viewBox="0 0 ${p.W} ${p.H}" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${esc(spec.title)}</title><desc id="${id}-desc">${esc(spec.description)}. Линейные шкалы с нуля; численные значения приведены в подписи и таблице.</desc>${drawing}</svg><p class="plot-current" data-plot-current></p><p class="plot-scale">Цена деления: ${esc(spec.xShort)} — ${esc(n(xs.step,xs.digits))} ${esc(spec.xUnit)}; ${esc(spec.yShort)} — ${esc(n(ys.step,ys.digits))} ${esc(spec.yUnit)}. Обе шкалы линейные, без разрывов.</p>`+table(id,spec.table(xs));
+   cache.set(id,key);
+  }
+  const point=$(id).querySelector('[data-current-point]');point.setAttribute('cx',xMap(p,xs,spec.current.x));point.setAttribute('cy',yMap(p,ys,spec.current.y));point.setAttribute('data-x',spec.current.x);point.setAttribute('data-y',spec.current.y);
+  $(id).querySelector('[data-plot-current]').textContent=spec.current.text;
+  states.set(id,{updates:(states.get(id)?.updates||0)+1,type:'line',x:xs,y:ys,geometry:p,current:spec.current,series:spec.series(xs),boundaries:spec.boundaries||[],guides:spec.guides||[]});
+ }
+ function bars(id,spec){
+  const p=dimensions(id,spec.rows.length),max=Math.max(0,...spec.rows.map(x=>x.value)),xs=scale(max>0?max*1.13:1,clamp(Math.floor((p.r-p.l)/90),2,7));
+  let drawing=xAxis(p,xs,spec.xLabel);
+  const rows=spec.rows.map((row,i)=>{
+   const y=p.t+17+i*(p.small?80:65),len=xMap(p,xs,row.value)-p.l;
+   drawing+=`<text data-category-label="true" x="${p.small?p.l:p.l-12}" y="${p.small?y-8:y+20}" font-size="${p.font}" text-anchor="${p.small?'start':'end'}">${esc(row.label)}</text><rect data-bar="${esc(row.label)}" data-value="${row.value}" x="${p.l}" y="${y}" width="${len}" height="29" fill="${row.color}"/><text x="${p.l+len+8}" y="${y+20}" font-size="${p.font}" font-weight="600">${esc(row.text)}</text>`;
+   return {...row,pixels:len,x0:p.l};
+  });
+  $(id).innerHTML=heading(spec.title,spec.subtitle)+`<svg viewBox="0 0 ${p.W} ${p.H}" role="img" aria-labelledby="${id}-title ${id}-desc"><title id="${id}-title">${esc(spec.title)}</title><desc id="${id}-desc">Все полосы построены от нуля в одной линейной шкале. Их длины пропорциональны значениям.</desc>${drawing}</svg><p class="plot-scale">Цена деления: ${esc(n(xs.step,xs.digits))} ${esc(spec.unit)}. Одна линейная шкала от нуля для всех полос; объёмных граней и скрытого увеличения малых значений нет.</p>`+table(id,spec.table);
+  states.set(id,{updates:(states.get(id)?.updates||0)+1,type:'bars',x:xs,geometry:p,rows});
+ }
+ return Object.freeze({line,bars,scale,fixedScale,digitsFor,getInfo:id=>JSON.parse(JSON.stringify(id?states.get(id)||null:Object.fromEntries(states)))});
+})();
+function draw1Graph(){
+ const {m,mus,muk,F}=params1(),r=horizontal(m,mus,muk,F),sl=muk*r.N;
+ Charts.line('cv1g',{key:[m,mus,muk],title:'Сила трения и горизонтальная тяга',subtitle:'Каждая точка — новая проба из покоя',
+  xRequired:Math.max(F,r.limit)*1.15,yRequired:r.limit*1.18,xLabel:'Тяга F, Н',yLabel:'Модуль Fтр, Н',xShort:'F',yShort:'Fтр',xUnit:'Н',yUnit:'Н',
+  description:'До предела сила трения равна тяге. При превышении предела действует трение скольжения. Линия скачка не является набором промежуточных состояний',
+  guides:[{x:r.limit}],legend:[{color:'#B22470',label:'Покой: Fтр = F'},{color:'#007BA7',label:'Скольжение: Fтр = μскN'},{color:'#6E309F',kind:'dot',label:'Текущая проба'},{color:'#80628F',kind:'dashed',label:'Fmax = '+n(r.limit,2)+' Н'}],
+  series:xs=>[{name:'static',color:'#B22470',points:[[0,0],[r.limit,r.limit]]},{name:'sliding',color:'#007BA7',points:[[r.limit,sl],[xs.max,sl]]}],
+  boundaries:Math.abs(r.limit-sl)>EPS?[{x:r.limit,y:sl,color:'#007BA7',filled:false},{x:r.limit,y:r.limit,color:'#B22470',filled:true}]:[{x:r.limit,y:r.limit,color:'#B22470',filled:true}],
+  current:{x:F,y:r.friction,text:'Сейчас: F = '+n(F,1)+' Н; Fтр = '+n(r.friction,2)+' Н. '+(r.boundary?'Предельный покой.':r.moving?'Скольжение.':'Покой.')},
+  table:xs=>({title:'Сила трения в отдельных пробах',headers:['Тяга F, Н','Fтр, Н','Состояние'],rows:[...new Set([0,r.limit/2,r.limit,Math.min(xs.max,r.limit+.1),xs.max])].sort((a,b)=>a-b).map(f=>{const v=horizontal(m,mus,muk,f);return [n(f,2),n(v.friction,2),v.boundary?'Предельный покой':v.moving?'Скольжение':'Покой'];})})
+ });
 }
-function curve(ctx,p,points,color=C.cyan){ctx.save();ctx.beginPath();ctx.rect(p.l-1,p.t-1,p.r-p.l+2,p.b-p.t+2);ctx.clip();ctx.strokeStyle=color;ctx.lineWidth=3;ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(p.sx(x),p.sy(y)):ctx.moveTo(p.sx(x),p.sy(y)));ctx.stroke();ctx.restore();}
-function thresholdLine(ctx,p,x,label){ctx.save();ctx.setLineDash([6,6]);ctx.strokeStyle=C.amber;ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(p.sx(x),p.t);ctx.lineTo(p.sx(x),p.b);ctx.stroke();ctx.restore();text(ctx,label,clamp(p.sx(x)+8,p.l+8,p.r-180),29,C.amber,18);}
+function draw2Graph(){
+ const m=read('rm2'),mus=read('rmu2'),muk=read('rmuK2'),a=readAngle(),r=inclined(m,mus,muk,a),peak=m*G*Math.sin(r.threshold*Math.PI/180),low=muk*m*G*Math.cos(r.threshold*Math.PI/180);
+ const first=[],second=[];for(let i=0;i<=180;i++){const t=r.threshold*i/180;first.push([t,m*G*Math.sin(t*Math.PI/180)]);const s=r.threshold+(60-r.threshold)*i/180;second.push([s,muk*m*G*Math.cos(s*Math.PI/180)]);}
+ Charts.line('cv2g',{key:[m,mus,muk],title:'Сила трения и угол наклона',subtitle:'Угол в градусах · независимые пробы',xFixed:{max:60,step:10,smallStep:20},yRequired:peak*1.18,xLabel:'Угол α, °',yLabel:'Модуль Fтр, Н',xShort:'α',yShort:'Fтр',xUnit:'°',yUnit:'Н',
+  description:'До критического угла Fтр равно mg sin α. После сдвига Fтр равно μск mg cos α; поэтому сила при дальнейшем увеличении угла уменьшается',
+  guides:[{x:r.threshold}],legend:[{color:'#B22470',label:'Покой: mg sin α'},{color:'#007BA7',label:'Скольжение: μскmg cos α'},{color:'#6E309F',kind:'dot',label:'Текущая проба'},{color:'#80628F',kind:'dashed',label:'α₀ = '+n(r.threshold,2)+'°'}],
+  series:()=>[{name:'static',color:'#B22470',points:first},{name:'sliding',color:'#007BA7',points:second}],
+  boundaries:Math.abs(peak-low)>EPS?[{x:r.threshold,y:low,color:'#007BA7',filled:false},{x:r.threshold,y:peak,color:'#B22470',filled:true}]:[{x:r.threshold,y:peak,color:'#B22470',filled:true}],
+  current:{x:a,y:r.friction,text:'Сейчас: α = '+n(a,exactAngle===null?1:3)+'°; Fтр = '+n(r.friction,2)+' Н. '+(r.boundary?'Предельный покой.':r.moving?'Скольжение.':'Покой.')},
+  table:()=>({title:'Сила трения при разных углах',headers:['Угол α, °','Fтр, Н','Состояние'],rows:[...new Set([0,r.threshold/2,r.threshold,r.threshold+.5,45,60])].sort((a,b)=>a-b).map(angle=>{const v=inclined(m,mus,muk,angle);return [n(angle,3),n(v.friction,3),v.boundary?'Предельный покой':v.moving?'Скольжение':'Покой'];})})
+ });
+}
+function drawRollingGraph(){
+ const r=rolling(read('rN'),read('rk'),read('rR'),read('rmu3'));
+ Charts.bars('cv3',{title:'Сравнение сил при одинаковой N',subtitle:'Fск = μскN; Fкач ≈ kкачN/R',xLabel:'Сила сопротивления F, Н',unit:'Н',
+  rows:[{label:'Скольжение',value:r.sliding,text:n(r.sliding,2)+' Н',color:'#B22470'},{label:'Качение',value:r.roll,text:n(r.roll,2)+' Н',color:'#6E309F'}],
+  table:{title:'Силы скольжения и качения',headers:['Вид сопротивления','Сила, Н'],rows:[['Скольжение',n(r.sliding,4)],['Качение',n(r.roll,4)]]}
+ });
+}
+function drawDragGraph(){
+ const a1=read('ra1'),c=read('rc'),r=drag(a1,c,car.t);
+ Charts.line('cvDragGraph',{key:[a1,c],title:'Разгон с линейным сопротивлением',subtitle:'Начальная скорость равна нулю',xRequired:Math.max(5/c,car.t*1.08,1),yRequired:r.vinf*1.18,xLabel:'Время t, с',yLabel:'Скорость v, м/с',xShort:'t',yShort:'v',xUnit:'с',yUnit:'м/с',
+  description:'Скорость возрастает по закону v = (a₁/c)(1 − exp(−ct)) и асимптотически приближается к предельной скорости',
+  guides:[{y:r.vinf}],legend:[{color:'#B22470',label:'v(t)'},{color:'#80628F',kind:'dashed',label:'v∞ = '+n(r.vinf,3)+' м/с'},{color:'#6E309F',kind:'dot',label:'Сейчас'}],
+  series:xs=>{const points=[];for(let i=0;i<=240;i++){const t=xs.max*i/240;points.push([t,drag(a1,c,t).v]);}return [{name:'velocity',color:'#B22470',points}];},
+  current:{x:car.t,y:r.v,text:'Сейчас: t = '+n(car.t,1)+' с; v = '+n(r.v,3)+' м/с.'},
+  table:xs=>({title:'Скорость в выбранные моменты времени',headers:['Время t, с','Скорость v, м/с'],rows:xs.ticks.map(t=>[t.label,n(drag(a1,c,t.value).v,4)])})
+ });
+}
+function drawBrakeGraph(){
+ const kmh=read('rv'),rows=Object.entries(ROADS).map(([key,rd])=>{const value=braking(kmh,rd.mu).brake;return {label:rd.name,value,text:n(value,2)+' м',color:key===road?'#6E309F':'#A6A4B7'};});
+ Charts.bars('cvBrake',{title:'Тормозные пути при одной скорости',subtitle:'Без пути за время реакции · v₀ = '+n(kmh,0)+' км/ч',xLabel:'Тормозной путь s, м',unit:'м',rows,
+  table:{title:'Тормозные пути на разных покрытиях',headers:['Покрытие','μ','sторм, м'],rows:Object.values(ROADS).map(rd=>[rd.name,n(rd.mu,2),n(braking(kmh,rd.mu).brake,3)])}
+ });
+}
+
 // Procedural, self-contained scene renderer. No WebGL, images, CDN or random motion.
 // Objects are projected illustrations; the numerical models above remain authoritative.
 const Scene = (()=>{
@@ -1012,18 +1358,7 @@ const Scene = (()=>{
   c.restore();pill(c,title,24,20);pill(c,'v = '+n(v,3)+' м/с',24,H-39);
   pill(c,'t = '+n(t,1)+' с  ·  s = '+n(s,2)+' м',W-298,H-39,274);
  }
- function rollingChart(c,W,H,r){
-  c.fillStyle='#FCFBFE';c.fillRect(0,0,W,H);
-  const base=H-70,max=Math.max(r.sliding,r.roll)*1.18,scale=(H-138)/max;
-  for(const [x,value,name,col,light] of [[190,r.sliding,'Скольжение','#B22470','#F7A6D1'],[550,r.roll,'Качение','#6E309F','#CDB4E7']]){
-   const h=Math.max(.5,value*scale);c.fillStyle=gradient(c,x,0,x+150,0,[[0,col],[1,light]]);rounded(c,x,base-h,150,h,Math.min(7,h/2));c.fill();
-   path(c,[[x,base-h],[x+16,base-h-9],[x+166,base-h-9],[x+150,base-h]],light);
-   path(c,[[x+150,base-h],[x+166,base-h-9],[x+166,base-9],[x+150,base]],col);
-   label(c,n(value,1)+' Н',x+75,base-h-26,{size:25,color:col,align:'center',bold:true});label(c,name,x+75,base+35,{size:23,color:'#263744',align:'center'});
-  }
-  c.strokeStyle='#D8D5E1';c.lineWidth=1.5;c.beginPath();c.moveTo(70,base);c.lineTo(W-65,base);c.stroke();
- }
- return Object.freeze({horizontal,incline,car,rollingChart,planeGeometry:planeGeometryVisual,vector,pill});
+ return Object.freeze({horizontal,incline,car,planeGeometry:planeGeometryVisual,vector,pill});
 })();
 // Analytic motion is independent of refresh rate. A finite shot ends at a frame,
 // never teleports to the start and never claims that the physical body has stopped.
@@ -1051,13 +1386,6 @@ function draw1Diagram(){
  Scene.horizontal(d.ctx,d.W,d.H,{...p,title:p.boundary?'Предельный покой':p.moving?'Скольжение вправо':'Трение покоя',forces:view.forces,micro:view.micro});
  sceneControls(1,p,run1);
 }
-function draw1Graph(){
- const d=clearCanvas('cv1g');if(!d)return;const {ctx,W,H}=d,{m,mus,muk,F}=params1(),r=horizontal(m,mus,muk,F),sl=muk*r.N;
- const p=plotAxes(ctx,W,H,30,Math.max(1,r.limit*1.17),'Тяга F, Н','Модуль Fтр, Н',6);
- curve(ctx,p,[[0,0],[r.limit,r.limit]]);curve(ctx,p,[[r.limit,sl],[30,sl]],C.green);
- thresholdLine(ctx,p,r.limit,'μпN = '+n(r.limit,1)+' Н');if(Math.abs(r.limit-sl)>EPS)circle(ctx,p.sx(r.limit),p.sy(sl),C.green,false);circle(ctx,p.sx(r.limit),p.sy(r.limit),C.cyan,true);
- circle(ctx,p.sx(F),p.sy(r.friction),C.amber,true,8);
-}
 function update1(){
  const {m,mus,muk,F}=params1(),r=horizontal(m,mus,muk,F);
  output('vF',n(F,1)+' Н');output('vm',n(m,1)+' кг');output('vmu',n(mus,2));output('vmuK',n(muk,2));
@@ -1070,15 +1398,6 @@ function draw2Diagram(){
  Scene.incline(d.ctx,d.W,d.H,{...p,title:p.boundary?'Предельный покой':p.moving?'Скольжение вниз по плоскости':'Трение удерживает ящик',forces:view.forces,micro:view.micro});
  sceneControls(2,p,run2);
 }
-function draw2Graph(){
- const d=clearCanvas('cv2g');if(!d)return;const {ctx,W,H}=d,m=read('rm2'),mus=read('rmu2'),muk=read('rmuK2'),a=readAngle(),r=inclined(m,mus,muk,a);
- const peak=m*G*Math.sin(r.threshold*Math.PI/180),p=plotAxes(ctx,W,H,60,Math.max(1,peak*1.16),'Угол α, °','Модуль Fтр, Н',4);
- const first=[],second=[];
- for(let i=0;i<=120;i++){const t=r.threshold*i/120;first.push([t,m*G*Math.sin(t*Math.PI/180)]);const s=r.threshold+(60-r.threshold)*i/120;second.push([s,muk*m*G*Math.cos(s*Math.PI/180)]);}
- curve(ctx,p,first);curve(ctx,p,second,C.green);thresholdLine(ctx,p,r.threshold,'α₀ = '+n(r.threshold,2)+'°');
- if(Math.abs(mus-muk)>EPS)circle(ctx,p.sx(r.threshold),p.sy(muk*m*G*Math.cos(r.threshold*Math.PI/180)),C.green,false);circle(ctx,p.sx(r.threshold),p.sy(peak),C.cyan,true);
- circle(ctx,p.sx(a),p.sy(r.friction),C.amber,true,8);
-}
 function update2(){
  const a=readAngle(),mus=read('rmu2'),muk=read('rmuK2'),m=read('rm2'),r=inclined(m,mus,muk,a);
  output('va',n(a,exactAngle===null?1:3)+'°');output('vmu2',n(mus,2));output('vmuK2',n(muk,2));output('vm2',n(m,1)+' кг');
@@ -1090,7 +1409,7 @@ function updateRolling(){
  output('vN',n(N,0)+' Н');output('vk',n(k,3)+' м');output('vR',n(R,2)+' м');output('vmu3',n(mu,2));
  const comparison=r.relation==='equal'?'Силы равны.':r.relation==='less'?'Сопротивление качению меньше в '+n(r.ratio,2)+' раза.':'Сопротивление качению больше в '+n(1/r.ratio,2)+' раза.';
  $('ro3').innerHTML=`Fкач ≈ kN/R = <b>${n(r.roll,2)} Н</b><br>Fск = μскN = <b>${n(r.sliding,2)} Н</b><br>${comparison}`;
- const d=clearCanvas('cv3');if(d)Scene.rollingChart(d.ctx,d.W,d.H,r);
+ drawRollingGraph();RollingFormation.render();
 }
 function drawDragScene(){
  const r=drag(read('ra1'),read('rc'),car.t),d=clearCanvas('cvDrag');
@@ -1099,12 +1418,11 @@ function drawDragScene(){
 function drawDrag(withScene=true){
  const a1=read('ra1'),c=read('rc'),r=drag(a1,c,car.t);
  if(withScene)drawDragScene();
- const dg=clearCanvas('cvDragGraph');if(dg){const {ctx,W,H}=dg,xmax=Math.max(5/c,car.t*1.05,1),p=plotAxes(ctx,W,H,xmax,r.vinf*1.2,'Время t, с','Скорость v, м/с',5),points=[];
-  for(let i=0;i<=220;i++){const t=xmax*i/220;points.push([t,drag(a1,c,t).v]);}curve(ctx,p,points);ctx.save();ctx.setLineDash([7,6]);ctx.strokeStyle=C.amber;ctx.beginPath();ctx.moveTo(p.l,p.sy(r.vinf));ctx.lineTo(p.r,p.sy(r.vinf));ctx.stroke();ctx.restore();text(ctx,'v∞ = '+n(r.vinf,2)+' м/с',p.r,29,C.amber,20,'right');circle(ctx,p.sx(car.t),p.sy(r.v),C.amber,true,8);}
+ drawDragGraph();
  $('roDrag').innerHTML=`v∞ = a₁/c = <span class="big">${n(r.vinf,2)} м/с</span><br>Сейчас: t = <b>${n(r.t,1)} с</b>, v = <b>${n(r.v,3)} м/с</b>, a = <b>${n(r.a,3)} м/с²</b>.<br><span class="note">Достигнуто ${n(r.v/r.vinf*100,1)}% предельной скорости; s = ${n(r.s,2)} м. Характерное время τ = 1/c = ${n(1/c,2)} с.${r.vinf>1?' При v = 1 м/с: a = '+n(a1-c,2)+' м/с².':''}</span>`;
  output('va1',n(a1,2)+' м/с²');output('vc',n(c,2)+' с⁻¹');
  output('dragToggle',car.running?'Пауза разгона':car.t>0?'Продолжить разгон':'Запустить разгон');
- output('dragState',car.running?(motion?'Разгон идёт при открытом модуле 3.':'Разгон приостановлен общей паузой анимации.'):(car.t>0?'Разгон на паузе.':'Разгон ещё не запущен.'));
+ output('dragState',car.running?(motion?'Разгон идёт при открытом разделе «Качение и среда».':'Разгон приостановлен общей паузой анимации.'):(car.t>0?'Разгон на паузе.':'Разгон ещё не запущен.'));
 }
 function resetDrag(){car.t=0;car.running=false;drawDrag();save();}
 function updateBrake(){
@@ -1112,20 +1430,19 @@ function updateBrake(){
  output('vv',n(kmh,0)+' км/ч');output('vReaction',n(reaction,1)+' с');
  $$('#roadButtons [data-road]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.road===road)));
  $('roBrake').innerHTML=`${ROADS[road].name}: μ = <b>${n(ROADS[road].mu,2)}</b>, v = <b>${n(r.v,2)} м/с</b><br>Тормозной путь: <span class="big">${n(r.brake,2)} м</span><br>За время реакции: <b>${n(r.duringReaction,2)} м</b>; весь остановочный путь: <b>${n(r.stop,2)} м</b>.<br><span class="note">В этой модели замедление μg = ${n(r.deceleration,2)} м/с².</span>`;
- const d=clearCanvas('cvBrake');if(!d)return;const {ctx,W}=d,max=Math.max(braking(kmh,.1).brake,1),x0=274,span=450;
- Object.entries(ROADS).forEach(([key,rd],i)=>{const v=braking(kmh,rd.mu).brake,y=65+i*85,len=v/max*span;ctx.fillStyle=key===road?rd.color:'#DBDDE9';ctx.fillRect(x0,y,len,29);text(ctx,rd.name,25,y+23,key===road?rd.color:C.muted,20);text(ctx,n(v,1)+' м',x0+len+13,y+23,C.ink,20);});
- text(ctx,'Только тормозной путь; реакция не включена',W/2,325,C.muted,19,'center');
+ drawBrakeGraph();
 }
 function renderQuiz(){
  const box=$('quizBox');box.replaceChildren();
  QUIZ.forEach((q,i)=>{
   const group=document.createElement('section');group.className='quiz-q';group.setAttribute('aria-labelledby','q'+i);
+  const badge=document.createElement('p');badge.className='lp-repeat-label'+(SHARED_QUIZ_IDS.includes(q.id)?'':' lp-new');badge.textContent=SHARED_QUIZ_IDS.includes(q.id)?'Повтор входного вопроса':'Новый вопрос на выходе';group.appendChild(badge);
   const title=document.createElement('h3');title.id='q'+i;title.textContent=(i+1)+'. '+q.q;group.appendChild(title);
   const goal=document.createElement('p');goal.className='goal-label';goal.textContent='Цель «'+q.goal_group+'»: '+q.goal;group.appendChild(goal);
   const chosen=quiz[i];q.o.forEach((label,j)=>{
    const b=document.createElement('button');b.className='opt';b.type='button';b.textContent=label;b.dataset.question=String(i);b.dataset.option=String(j);
    if(chosen!==null){b.disabled=true;if(j===q.a){b.classList.add('correct');b.textContent+=' — правильный ответ';}if(j===chosen){b.setAttribute('aria-pressed','true');if(chosen!==q.a){b.classList.add('wrong');b.textContent+=' — ваш выбор';}else b.textContent+=' / ваш выбор';}}
-   b.addEventListener('click',()=>{if(quiz[i]!==null)return;quiz[i]=j;renderQuiz();save();const feedback=$$('#quizBox .quiz-q')[i].querySelector('.feedback');if(feedback){feedback.tabIndex=-1;feedback.focus({preventScroll:true});}});group.appendChild(b);
+   b.addEventListener('click',()=>{if(quiz[i]!==null)return;registerFirstExit(i,j);quiz[i]=j;renderQuiz();save(true);const feedback=$$('#quizBox .quiz-q')[i].querySelector('.feedback');if(feedback){feedback.tabIndex=-1;feedback.focus({preventScroll:true});}});group.appendChild(b);
   });
   if(chosen!==null){const p=document.createElement('p');p.className='feedback '+(chosen===q.a?'good':'bad');p.setAttribute('role','status');p.textContent=(chosen===q.a?'Верно. ':'Пока неверно. ')+q.e;group.appendChild(p);}
   box.appendChild(group);
@@ -1139,7 +1456,7 @@ function renderQuiz(){
   const indices=QUIZ.map((q,i)=>q.goal_id===id?i:-1).filter(i=>i>=0),goal=QUIZ[indices[0]],answered=indices.filter(i=>quiz[i]!==null).length,correct=indices.filter(i=>quiz[i]===QUIZ[i].a).length;
   const p=document.createElement('p');p.textContent='Цель «'+goal.goal_group+'»: '+goal.goal+' — '+(answered<indices.length?'пока отвечено '+answered+' из '+indices.length:correct===indices.length?'верно; объясни ответ своими словами':'есть ошибка: вернись к объяснению и повтори');$('quizGoals').appendChild(p);
  }
- renderWorksheet();
+ renderLearningProgress();renderWorksheet();
 }
 function renderScores(){
  const body=$('critBox');body.replaceChildren();
@@ -1183,23 +1500,54 @@ function trialSettings(kind){return kind==='a'?{threshold:SURF[surf].mu*10,step:
 function resetTrial(kind){if(kind==='a'){trialA=freshTrial();phase7A=0;$('rF7').value='0';}else{trialB=freshTrial();phase7B=0;$('ra7').value='0';}}
 function changeTrial(kind,value){
  const s=trialSettings(kind);if(practice[surf][kind].length>=3)return;
- value=clamp(value,0,s.max);value=Number((Math.round(value/s.step)*s.step).toFixed(6));$(s.id).value=String(value);
- if(kind==='a')trialA=advanceTrial(trialA,value,s.threshold,s.step);else trialB=advanceTrial(trialB,value,s.threshold,s.step);
+ let t=kind==='a'?trialA:trialB;
+ // A precise captured reading is held; a coarse pointer jump must never deadlock the instrument.
+ if(t.valid){$(s.id).value=String(t.value);return;}
+ value=clamp(value,0,s.max);value=Number((Math.round(value/s.step)*s.step).toFixed(6));
+ if(t.crossed&&!greater(value,s.threshold)){
+  // The user explicitly returns to a resting setting: start a new trial there, without inventing a finer measurement.
+  resetTrial(kind);t=kind==='a'?trialA:trialB;
+ }
+ $(s.id).value=String(value);
+ if(kind==='a')trialA=advanceTrial(t,value,s.threshold,s.step);else trialB=advanceTrial(t,value,s.threshold,s.step);
  renderTrialControls();drawPractice();
+}
+function refineTrial(kind){
+ const t=kind==='a'?trialA:trialB,s=trialSettings(kind);
+ if(!t.crossed||t.valid||practice[surf][kind].length>=3)return;
+ const rest=t.lo;resetTrial(kind);changeTrial(kind,rest);
+ output('hint7','Способ '+s.name+': вернулись к последнему наблюдавшемуся покою — '+n(rest,1)+' '+s.unit+'. Уточняйте порог кнопкой «+» с шагом '+n(s.step,1)+' '+s.unit+'. Грубая проба не записана.');
+ $(kind==='a'?'f7Plus':'a7Plus').focus({preventScroll:true});
+}
+function hideSeriesConfirmations(){for(const letter of ['A','B'])$('restart'+letter+'Confirm').hidden=true;}
+function retryPractice(kind){
+ const letter=kind==='a'?'A':'B';hideSeriesConfirmations();
+ if(practice[surf][kind].length>=3){$('restart'+letter+'Confirm').hidden=false;$('restart'+letter+'No').focus({preventScroll:true});return;}
+ resetTrial(kind);renderTrialControls();drawPractice();
+}
+function restartPracticeSeries(kind){
+ const d=practice[surf],letter=kind==='a'?'A':'B',guess=kind==='a'?'guessA':'guessB';
+ d[kind]=[];d[guess]='';d.revealed=false;$('guess'+letter+'7').value='';
+ resetTrial(kind);hideSeriesConfirmations();renderPractice();
+ output('hint7','Начата новая серия '+(kind==='a'?'А':'Б')+'. Удалены только её три измерения и старый расчёт. Другой способ, остальные пары, лист и таймеры сохранены. Вывод сохранён — пересмотрите его после новых измерений.');
+ save(true);
 }
 function renderCapture(kind,t){
  const s=trialSettings(kind),target=$(kind==='a'?'captureA':'captureB');
- if(practice[surf][kind].length===3){target.textContent='Серия '+s.name+' завершена: 3 из 3. Данные в протоколе.';return;}
+ target.classList.toggle('capture-warn',t.crossed&&!t.valid&&practice[surf][kind].length<3);
+ if(practice[surf][kind].length===3){target.textContent='Серия '+s.name+' завершена: 3 из 3. Данные сохранены в протоколе. Чтобы повторить, нажмите «Новая серия '+s.name+'…»; удаление только этой серии потребует подтверждения.';return;}
  if(!t.crossed){target.textContent='Покой. '+(kind==='a'?'Плавно увеличивайте тягу до сдвига.':'Медленно увеличивайте угол до начала скольжения.');return;}
- if(!t.valid){target.textContent='Начало движения пропущено слишком крупным шагом. Нажмите «Проба из покоя» и используйте малые шаги около порога.';return;}
- target.textContent=(kind==='a'?'Fmax':'α₀')+' ∈ ['+n(t.lo,1)+'; '+n(t.hi,1)+'] '+s.unit+'. Записываем '+n((t.lo+t.hi)/2,2)+' ± '+n((t.hi-t.lo)/2,2)+' '+s.unit+'.';
+ if(!t.valid){target.textContent='Порог перескочен слишком крупным шагом — эта проба не записывается. Управление доступно: уменьшите значение ползунком или «−», либо нажмите «Уточнить порог» и продолжите кнопкой «+».';return;}
+ target.textContent=(kind==='a'?'Fmax':'α₀')+' ∈ ['+n(t.lo,1)+'; '+n(t.hi,1)+'] '+s.unit+'. Записываем '+n((t.lo+t.hi)/2,2)+' ± '+n((t.hi-t.lo)/2,2)+' '+s.unit+'. Показание зафиксировано: запишите измерение или начните пробу из покоя.';
 }
 function renderTrialControls(){
  output('vF7',n(trialA.value,1)+' Н');output('va7',n(trialB.value,1)+'°');
  for(const [kind,t,ids] of [['a',trialA,['rF7','f7Minus','f7Plus']],['b',trialB,['ra7','a7Minus','a7Plus']]]){
   const complete=practice[surf][kind].length===3;
-  for(const id of ids)$(id).disabled=complete||t.crossed;
+  for(const id of ids)$(id).disabled=complete||t.valid;
   $(kind==='a'?'recordA':'recordB').disabled=complete||!t.valid;
+  const letter=kind==='a'?'A':'B';$('refine'+letter).hidden=complete||!t.crossed||t.valid;
+  $('retry'+letter).textContent=complete?'Новая серия '+(kind==='a'?'А':'Б')+'…':'Проба из покоя';
   renderCapture(kind,t);
  }
 }
@@ -1211,7 +1559,7 @@ function record(kind){
  resetTrial(kind);renderPractice();save();
 }
 function selectSurface(key){
- if(!Object.hasOwn(SURF,key))return;$('hint7').classList.remove('error');surf=key;resetTrial('a');resetTrial('b');$('clear7Confirm').hidden=true;
+ if(!Object.hasOwn(SURF,key))return;$('hint7').classList.remove('error');surf=key;resetTrial('a');resetTrial('b');hideSeriesConfirmations();$('clear7Confirm').hidden=true;
  $('guessA7').value=practice[surf].guessA;$('guessB7').value=practice[surf].guessB;$('conclusion7').value=practice[surf].conclusion;
  output('hint7','Пара: '+SURF[surf].name+'. Сохранённые измерения показаны ниже.');renderPractice();save();
 }
@@ -1222,9 +1570,9 @@ function practiceShot(kind){
 }
 function drawPractice(){
  const pa=practiceShot('a'),a=clearCanvas('cv7A');
- if(a)Scene.horizontal(a.ctx,a.W,a.H,{...pa,m:1,F:trialA.value,title:trialA.crossed?'Начало сдвига зафиксировано':'Увеличивайте тягу плавно',forces:false,micro:view.micro,material:surf,pixelsPerMetre:340,showTime:false,instrument:true});
+ if(a)Scene.horizontal(a.ctx,a.W,a.H,{...pa,m:1,F:trialA.value,title:trialA.valid?'Начало сдвига зафиксировано':trialA.crossed?'Грубая проба — уточните порог':'Увеличивайте тягу плавно',forces:false,micro:view.micro,material:surf,pixelsPerMetre:340,showTime:false,instrument:true});
  const pb=practiceShot('b'),b=clearCanvas('cv7B');
- if(b)Scene.incline(b.ctx,b.W,b.H,{...pb,m:1,angle:trialB.value,title:trialB.crossed?'Начало скольжения зафиксировано':'Медленно поднимайте плоскость',forces:false,micro:view.micro,material:surf,distanceMagnification:4,showTime:false});
+ if(b)Scene.incline(b.ctx,b.W,b.H,{...pb,m:1,angle:trialB.value,title:trialB.valid?'Начало скольжения зафиксировано':trialB.crossed?'Грубая проба — уточните порог':'Медленно поднимайте плоскость',forces:false,micro:view.micro,material:surf,distanceMagnification:4,showTime:false});
 }
 function practiceStats(d=practice[surf]){
  if(!d.a.length||!d.b.length)return null;
@@ -1256,14 +1604,17 @@ function renderPractice(){
  renderCheck();output('exportText7',protocolCSV());drawPractice();
 }
 function switchTab(id,focus=false){
- if(!PANEL_IDS.includes(id))id='p1';active=id;
+ if(!PANEL_IDS.includes(id))id='p0';
+ const freezing=id!=='p0'&&!learningProgress.baseline;
+ if(freezing)freezeEntry('before-activities'); // A skipped/partial entry is evidence too; never backfill it after learning.
+ active=id;
  $$('[data-p]').forEach(b=>{const on=b.dataset.p===id;b.setAttribute('aria-selected',String(on));b.tabIndex=on?0:-1;});
  $$('.panel').forEach(p=>p.hidden=p.id!==id);lastFrame=null;
  if(focus)$('tab-'+id).focus();
  try{history.replaceState(null,'','#'+id);}catch(_){}
- renderActive();save();
+ renderActive();save(freezing);
 }
-function renderActive(){if(active==='p1')update1();else if(active==='p2')update2();else if(active==='p3'){updateRolling();drawDrag();updateBrake();}else if(active==='p7')renderPractice();else if(active==='p8')renderWorksheet();renderTimers();}
+function renderActive(){if(active==='p0')syncEntryQuiz();else if(active==='p1')update1();else if(active==='p2')update2();else if(active==='p3'){updateRolling();drawDrag();updateBrake();}else if(active==='p7')renderPractice();else if(active==='p4')renderLearningProgress();else if(active==='p8')renderWorksheet();renderTimers();}
 function frame(timestamp){
  // Model time may be slowed for observation. Long stalls do not throw the object across the scene.
  const raw=lastFrame===null?0:Math.max(0,(timestamp-lastFrame)/1000),dt=Math.min(raw,.05)*view.rate;lastFrame=timestamp;
@@ -1275,6 +1626,7 @@ function frame(timestamp){
    for(const kind of ['a','b']){const trial=kind==='a'?trialA:trialB,p=practiceShot(kind);if(trial.crossed&&!p.ended){if(kind==='a')phase7A=Math.min(phase7A+dt,p.end);else phase7B=Math.min(phase7B+dt,p.end);dirty=true;}}
    if(dirty)drawPractice();
   }
+  if(active==='p3')RollingFormation.advance(dt);
   if(active==='p3'&&car.running){car.t+=dt;drawDragScene();if(timestamp-lastDragPaint>=100){drawDrag(false);lastDragPaint=timestamp;}}
  }
  requestAnimationFrame(frame);
@@ -1311,7 +1663,7 @@ $$('[data-preset-f]').forEach(b=>b.addEventListener('click',()=>presetF(Number(b
 }));
 $('angleThreshold').addEventListener('click',()=>{exactAngle=Math.atan(read('rmu2'))*180/Math.PI;$('ra').step='any';$('ra').value=String(exactAngle);phase2=0;output('hint2','Установлен аналитический порог α₀. Показано точное значение; при ручном изменении ползунок вернётся к сетке 0,5°.');update2();save();});
 $('reset2').addEventListener('click',()=>{for(const id of ['ra','rm2','rmu2'])$(id).value=defaults[id];$('rmuK2').max='.5';$('rmuK2').value='.5';$('ra').step='.5';exactAngle=null;phase2=0;output('hint2','Восстановлены исходные параметры.');update2();save();});
-['rN','rk','rR','rmu3'].forEach(id=>$(id).addEventListener('input',()=>{updateRolling();save();}));
+['rN','rk','rR','rmu3'].forEach(id=>$(id).addEventListener('input',()=>{if(id!=='rmu3')RollingFormation.parametersChanged();updateRolling();save();}));
 ['ra1','rc'].forEach(id=>$(id).addEventListener('input',()=>resetDrag()));
 $('dragToggle').addEventListener('click',()=>{car.running=!car.running;lastFrame=null;drawDrag();});
 $('dragReset').addEventListener('click',resetDrag);
@@ -1330,7 +1682,12 @@ $('soundEnabled').addEventListener('change',()=>{prepareAudio();save();});
 $$('[data-surface]').forEach(b=>b.addEventListener('click',()=>selectSurface(b.dataset.surface)));
 $('rF7').addEventListener('input',()=>changeTrial('a',read('rF7')));$('ra7').addEventListener('input',()=>changeTrial('b',read('ra7')));
 for(const [id,kind,direction] of [['f7Minus','a',-1],['f7Plus','a',1],['a7Minus','b',-1],['a7Plus','b',1]])$(id).addEventListener('click',()=>{const t=kind==='a'?trialA:trialB,s=trialSettings(kind);changeTrial(kind,t.value+direction*s.step);});
-$('retryA').addEventListener('click',()=>{resetTrial('a');renderTrialControls();drawPractice();});$('retryB').addEventListener('click',()=>{resetTrial('b');renderTrialControls();drawPractice();});
+for(const [letter,kind] of [['A','a'],['B','b']]){
+ $('retry'+letter).addEventListener('click',()=>retryPractice(kind));
+ $('refine'+letter).addEventListener('click',()=>refineTrial(kind));
+ $('restart'+letter+'No').addEventListener('click',()=>{$('restart'+letter+'Confirm').hidden=true;$('retry'+letter).focus({preventScroll:true});});
+ $('restart'+letter+'Yes').addEventListener('click',()=>restartPracticeSeries(kind));
+}
 $('recordA').addEventListener('click',()=>record('a'));$('recordB').addEventListener('click',()=>record('b'));
 for(const [id,key] of [['guessA7','guessA'],['guessB7','guessB'],['conclusion7','conclusion']])$(id).addEventListener('input',()=>{practice[surf][key]=$(id).value;if(key!=='conclusion'){practice[surf].revealed=false;renderCheck();}output('exportText7',protocolCSV());save();});
 $('check7').addEventListener('click',()=>{
@@ -1338,7 +1695,7 @@ $('check7').addEventListener('click',()=>{
  if(decimal(d.guessA)===null||decimal(d.guessB)===null){output('hint7','Введите два числа от 0 до 2: μА и μБ. Можно использовать десятичную запятую.');$('hint7').classList.add('error');(decimal(d.guessA)===null?$('guessA7'):$('guessB7')).focus();return;}
  $('hint7').classList.remove('error');output('hint7','Сверка выполнена. Сравните оба интервала, затем сформулируйте свой вывод.');d.revealed=true;renderCheck();output('exportText7',protocolCSV());save();
 });
-$('clear7').addEventListener('click',()=>{$('clear7Confirm').hidden=false;});
+$('clear7').addEventListener('click',()=>{hideSeriesConfirmations();$('clear7Confirm').hidden=false;});
 $('clear7No').addEventListener('click',()=>{$('clear7Confirm').hidden=true;});
 $('clear7Yes').addEventListener('click',()=>{practice[surf]=emptyPair();$('guessA7').value='';$('guessB7').value='';$('conclusion7').value='';resetTrial('a');resetTrial('b');$('clear7Confirm').hidden=true;$('hint7').classList.remove('error');output('hint7','Данные текущей пары очищены. Другие пары и таймеры сохранены.');renderPractice();save();});
 $('export7').addEventListener('click',()=>{
@@ -1348,6 +1705,202 @@ $('print7').addEventListener('click',()=>{document.body.dataset.print='practice'
 window.addEventListener('pagehide',()=>save(true));
 document.addEventListener('visibilitychange',()=>{lastFrame=null;if(document.hidden)save(true);else renderTimers();});
 window.addEventListener('hashchange',()=>{const id=location.hash.slice(1);if(PANEL_IDS.includes(id))switchTab(id);});
+// Immutable question wording for archived answers; never reinterpret old option indices.
+const LEGACY_QUIZ_REVISION="understanding-goals-v1";
+const LEGACY_EXIT_QUIZ=Object.freeze([{"id":"walking","q":"Какое трение помогает человеку идти, не проскальзывая?","o":["Трение покоя между обувью и землёй","Трение качения","Сопротивление воздуха"],"a":0,"e":"Трение покоя между обувью и землёй помогает оттолкнуться без проскальзывания. Это пример полезного трения.","goal":"Объяснить, когда трение помогает, а когда мешает движению","goal_group":"СМОЖЕМ","goal_id":"use","goal_short":"Объяснить, когда трение помогает движению"},{"id":"rest","q":"Брусок тянут, но он неподвижен. Какое трение действует?","o":["Трение скольжения","Трение покоя","Трение качения"],"a":1,"e":"Пока поверхности не скользят друг относительно друга, действует трение покоя. Оно может уравновешивать тягу до своего предела.","goal":"Виды трения: покой, скольжение, качение","goal_group":"УЗНАЕМ","goal_id":"types","goal_short":"Различать трение покоя, скольжения и качения"},{"id":"wheels","q":"Зачем при перевозке груза используют колёса и ролики?","o":["Чтобы заменить скольжение качением и уменьшить сопротивление","Чтобы полностью убрать любое трение","Чтобы увеличить массу груза"],"a":0,"e":"В обычных условиях колёса и ролики заменяют скольжение качением и уменьшают сопротивление. Трение при этом не исчезает полностью.","goal":"Объяснить, когда трение помогает, а когда мешает движению","goal_group":"СМОЖЕМ","goal_id":"use","goal_short":"Объяснить, как уменьшить мешающее движению трение"},{"id":"water","q":"Куда направлено сопротивление воды движущейся лодке?","o":["По движению лодки относительно воды","Против движения лодки относительно воды","Всегда вертикально вверх"],"a":1,"e":"Сопротивление направлено против скорости лодки относительно воды. Важно сравнивать движение тела именно со средой.","goal":"Сила сопротивления в жидкости и газе","goal_group":"УЗНАЕМ","goal_id":"medium","goal_short":"Объяснить действие сопротивления жидкости и газа"},{"id":"braking","q":"При той же скорости где тормозной путь больше: на сухой или скользкой дороге?","o":["На сухой дороге, где трение больше","На скользкой дороге, где трение меньше","Одинаков при любом трении"],"a":1,"e":"При одинаковой начальной скорости и прочих равных меньшее трение даёт большее расстояние торможения. На скользкой дороге скорость нужно снижать заранее.","goal":"Оценить тормозной путь автомобиля","goal_group":"СМОЖЕМ","goal_id":"braking","goal_short":"Качественно оценить тормозной путь автомобиля"}]);
+
+// Ungraded entry questions. The old bank is retained to display saved answers honestly.
+const ENTRY_REVISION='prior-knowledge-v3';
+const ENTRY_QUIZ_V1=Object.freeze([
+ {id:'without-motion',q:'Трение может действовать на тело, которое пока не движется?',o:['Да','Нет','Пока не знаю']},
+ {id:'help-to-move',q:'Может ли трение помогать человеку начать движение?',o:['Да','Нет','Пока не знаю']},
+ {id:'pull-harder',q:'Брусок тянут сильнее, но он ещё неподвижен. Что происходит с силой трения?',o:['Увеличивается вместе с тягой','Остаётся неизменной','Уменьшается','Пока не знаю']},
+ {id:'rollers',q:'Почему тяжёлый груз обычно легче перемещать на колёсах, чем волоком?',o:['Качение обычно даёт меньшее сопротивление','Колёса убирают силу тяжести','Любое трение полностью исчезает','Пока не знаю']},
+ {id:'slippery',q:'При той же начальной скорости и прочих равных тормозной путь на скользкой дороге…',o:['Больше','Меньше','Такой же','Пока не знаю']}
+]);
+function repeatEntry(id,bank=QUIZ){const q=bank.find(q=>q.id===id);return {id,exitId:id,q:q.q,o:[...q.o,'Пока не знаю']};}
+const ENTRY_QUIZ_V2=Object.freeze([repeatEntry('rest',LEGACY_EXIT_QUIZ),ENTRY_QUIZ_V1[1],ENTRY_QUIZ_V1[2],repeatEntry('wheels',LEGACY_EXIT_QUIZ),repeatEntry('braking',LEGACY_EXIT_QUIZ)]);
+const ENTRY_QUIZ=Object.freeze([repeatEntry('rest'),ENTRY_QUIZ_V1[1],repeatEntry('pull-harder'),repeatEntry('wheels'),repeatEntry('braking')]);
+let entryRevision=ENTRY_REVISION,entryAnswers=ENTRY_QUIZ.map(()=>null);
+function entryBank(revision=entryRevision){return revision==='prior-knowledge-v1'?ENTRY_QUIZ_V1:revision==='prior-knowledge-v2'?ENTRY_QUIZ_V2:ENTRY_QUIZ;}
+function cleanEntryAnswers(raw,revision){return entryBank(revision).map((q,i)=>Array.isArray(raw)&&Number.isInteger(raw[i])&&raw[i]>=0&&raw[i]<q.o.length?raw[i]:null);}
+function restoreEntryQuiz(raw){
+ if(!raw||raw.revision!==ENTRY_REVISION)return;
+ const answers=cleanEntryAnswers(raw.answers,raw.revision);
+ entryRevision=raw.revision;entryAnswers=answers;
+}
+function syncEntryQuiz(){
+ const locked=!!learningProgress.baseline;
+ $$('[data-entry-question]').forEach(e=>{e.checked=entryAnswers[Number(e.dataset.entryQuestion)]===Number(e.value);e.disabled=locked;});
+ const done=entryAnswers.filter(x=>x!==null).length;
+ const prefix=done===5?'Все пять ответов отмечены.':'Отмечено '+done+' из 5.';
+ output('entryProgress',prefix+(locked?' Вход сохранён для сравнения: исходные ответы не переписываются. Это гипотезы, не оценка.':' Можно выбрать «Пока не знаю» и изменить любой ответ. Баллов нет.'));
+ $('entryQuizReset').disabled=locked;
+ output('entryLockNote',locked?'Сохранён именно этот вход. В конце ты увидишь его рядом с первым ответом на выходе. Для другого урока выбери «Новый круг сравнения».':'Когда перейдёшь от входного опроса к опытам, ответы зафиксируются. Если вход пропущен, он будет отмечен как пропущенный, а не как ошибка.');
+ $('entryNewCycle').hidden=!locked&&entryRevision===ENTRY_REVISION;
+ $('entryLegacyNote').hidden=!learningProgress.archives.length;
+ output('entryOverlapNote','Четыре из пяти вопросов точно повторятся на выходе. Выбирай не только знакомое слово, но и верное объяснение ситуации.');
+}
+function renderEntryQuiz(){
+ const box=$('entryQuizBox');box.replaceChildren();
+ entryBank().forEach((q,i)=>{
+  const group=document.createElement('fieldset');group.className='entry-q';
+  const legend=document.createElement('legend');legend.textContent=(i+1)+'. '+q.q;group.appendChild(legend);
+  const choices=document.createElement('div');choices.className='entry-choices';
+  q.o.forEach((value,j)=>{
+   const label=document.createElement('label');label.className='entry-option';
+   const input=document.createElement('input');input.type='radio';input.name='entry-q-'+i;input.id='entry-'+i+'-'+j;input.value=String(j);input.dataset.entryQuestion=String(i);
+   const text=document.createElement('span');text.textContent=value;label.append(input,text);choices.appendChild(label);
+   input.addEventListener('change',()=>{if(!input.checked||learningProgress.baseline)return;entryAnswers[i]=j;syncEntryQuiz();renderLearningProgress();renderWorksheet();save(true);});
+  });
+  group.appendChild(choices);box.appendChild(group);
+ });
+ syncEntryQuiz();
+}
+$('entryQuizReset').addEventListener('click',()=>{if(learningProgress.baseline)return;entryAnswers=entryBank().map(()=>null);syncEntryQuiz();renderLearningProgress();renderWorksheet();save(true);});
+
+// A saved entry and the first exit responses form a learning comparison, never an entry grade.
+const PROGRESS_REVISION='entry-exit-progress-v2';
+const SHARED_QUIZ_IDS=Object.freeze(['rest','pull-harder','wheels','braking']);
+function freshLearningProgress(archives=[]){return {revision:PROGRESS_REVISION,quizRevision:QUIZ_REVISION,baseline:null,firstExit:QUIZ.map(()=>null),archives};}
+let learningProgress=freshLearningProgress();
+function cleanExitAnswers(raw){return QUIZ.map((q,i)=>Array.isArray(raw)&&Number.isInteger(raw[i])&&raw[i]>=0&&raw[i]<q.o.length?raw[i]:null);}
+function responseRecords(bank,raw){return bank.map((q,i)=>({id:q.id,q:q.q,answer:Array.isArray(raw)&&Number.isInteger(raw[i])&&raw[i]>=0&&raw[i]<q.o.length?q.o[raw[i]]:null}));}
+function sanitizeQuizArchives(raw){
+ if(!Array.isArray(raw))return [];
+ const records=rows=>!Array.isArray(rows)?[]:rows.slice(0,5).filter(x=>x&&typeof x.q==='string').map(x=>({id:typeof x.id==='string'?x.id.slice(0,80):'',q:x.q.slice(0,1600),answer:typeof x.answer==='string'?x.answer.slice(0,1600):null}));
+ return raw.slice(-8).filter(x=>x&&typeof x.title==='string').map(x=>({title:x.title.slice(0,160),entryRevision:typeof x.entryRevision==='string'?x.entryRevision.slice(0,80):'',quizRevision:typeof x.quizRevision==='string'?x.quizRevision.slice(0,80):'',firstExitKnown:x.firstExitKnown===true,entry:records(x.entry),firstExit:records(x.firstExit),training:records(x.training)})).filter(x=>[...x.entry,...x.firstExit,...x.training].some(r=>r.answer!==null));
+}
+function archiveLegacyResponses(cached){
+ if(!cached)return null;
+ const unidentified=(raw,kind)=>!Array.isArray(raw)?[]:raw.slice(0,5).map((v,i)=>({id:'unidentified-'+i,q:'Вопрос '+(i+1)+' прежнего '+kind+': исходная формулировка недоступна.',answer:Number.isInteger(v)&&v>=0&&v<20?'Вариант '+(v+1)+' (текст не восстановлен)':null}));
+ const old=cached.learningProgress,baseline=old?.revision==='entry-exit-progress-v1'&&old.baseline?old.baseline:cached.entryQuiz;
+ const oldEntry=['prior-knowledge-v1','prior-knowledge-v2'].includes(baseline?.revision);
+ const entry=oldEntry?responseRecords(entryBank(baseline.revision),baseline.answers):baseline?.revision!==ENTRY_REVISION?unidentified(baseline?.answers,'входного опроса'):[];
+ let firstExit=[],training=[],firstExitKnown=false;
+ if(cached.quizRevision===LEGACY_QUIZ_REVISION){
+  firstExitKnown=old?.revision==='entry-exit-progress-v1'&&old.quizRevision===LEGACY_QUIZ_REVISION&&Array.isArray(old.firstExit);
+  const first=firstExitKnown?old.firstExit:cached.quiz;
+  firstExit=responseRecords(LEGACY_EXIT_QUIZ,first);training=responseRecords(LEGACY_EXIT_QUIZ,cached.quiz);
+  if(JSON.stringify(training)===JSON.stringify(firstExit))training=[];
+ }else if(cached.quizRevision!==QUIZ_REVISION){
+  firstExit=unidentified(cached.quiz,'итогового квиза');
+ }
+ if(![...entry,...firstExit,...training].some(x=>x.answer!==null))return null;
+ return {title:'До обновления вопросов — исходные ответы',entryRevision:typeof baseline?.revision==='string'?baseline.revision:'не указана',quizRevision:typeof cached.quizRevision==='string'?cached.quizRevision:'не указана',firstExitKnown,entry,firstExit,training};
+}
+function restoreLearningProgress(raw,cached={}){
+ learningProgress=freshLearningProgress(sanitizeQuizArchives(raw?.archives));
+ if(raw?.revision===PROGRESS_REVISION&&raw.quizRevision===QUIZ_REVISION){
+  learningProgress.firstExit=cleanExitAnswers(raw.firstExit);
+  const b=raw.baseline;
+  if(b?.revision===ENTRY_REVISION&&Array.isArray(b.answers)){
+   const allowed=['before-activities','before-exit','legacy-import','restored-no-baseline'];
+   learningProgress.baseline={revision:ENTRY_REVISION,answers:cleanEntryAnswers(b.answers,ENTRY_REVISION),origin:allowed.includes(b.origin)?b.origin:'restored-no-baseline'};
+  }
+  if(!learningProgress.baseline&&learningProgress.firstExit.some(x=>x!==null))learningProgress.baseline={revision:ENTRY_REVISION,answers:ENTRY_QUIZ.map(()=>null),origin:'restored-no-baseline'};
+ }else{
+  const archive=archiveLegacyResponses(cached);if(archive)learningProgress.archives.push(archive);
+  if(cached.quizRevision===QUIZ_REVISION&&quiz.some(x=>x!==null)){
+   learningProgress.baseline={revision:ENTRY_REVISION,answers:[...entryAnswers],origin:'legacy-import'};learningProgress.firstExit=[...quiz];
+  }
+ }
+ if(learningProgress.baseline){entryRevision=ENTRY_REVISION;entryAnswers=[...learningProgress.baseline.answers];}
+}
+function freezeEntry(origin='before-exit'){
+ if(learningProgress.baseline)return;
+ learningProgress.baseline={revision:entryRevision,answers:[...entryAnswers],origin};
+ syncEntryQuiz();
+}
+function registerFirstExit(i,answer){freezeEntry('before-exit');if(learningProgress.firstExit[i]===null)learningProgress.firstExit[i]=answer;}
+function progressEntrySnapshot(){return learningProgress.baseline||{revision:entryRevision,answers:[...entryAnswers],origin:'draft'};}
+function progressRows(){
+ const b=progressEntrySnapshot(),bank=entryBank();
+ return SHARED_QUIZ_IDS.map(id=>{
+  const exitIndex=QUIZ.findIndex(q=>q.id===id),q=QUIZ[exitIndex],entryIndex=bank.findIndex(x=>x.exitId===id);
+  const iq=bank[entryIndex],chosen=b.answers[entryIndex],exitChosen=learningProgress.firstExit[exitIndex];
+  const entryProvided=Number.isInteger(chosen),unknown=entryProvided&&chosen===iq.o.length-1;
+  let state='pending',label='Сначала ответь на этот вопрос на выходе. Верность входной гипотезы заранее не подсказывается.';
+  if(exitChosen!==null){
+   if(!entryProvided){state='no-entry';label='На входе нет ответа для сравнения. Пропуск не считается ошибкой или нулевым прогрессом.';}
+   else if(['legacy-import','restored-no-baseline'].includes(b.origin)){state='legacy-pair';label='Порядок заполнения этих сохранённых ответов неизвестен — оцени изменение сам(а), без автоматического вывода о приросте.';}
+   else{
+    const entryCorrect=chosen===q.a,exitCorrect=exitChosen===q.a;
+    if(exitCorrect&&(unknown||!entryCorrect)){state='improved';label=unknown?'Теперь могу ответить: на входе было «Пока не знаю», на выходе — верная идея.':'Разобрался: на входе была другая идея, а первый ответ на выходе верный. Объясни, что помогло.';}
+    else if(exitCorrect){state='confirmed';label='Понимание подтвердилось: верная идея была и на входе, и на выходе. Теперь объясни её своими словами.';}
+    else{state='work';label=entryCorrect?'Есть противоречие: верная входная идея на выходе изменилась. Разбери объяснение и задай вопрос.':'Этот вопрос ещё стоит разобрать. Смена варианта сама по себе не означает прогресс.';}
+   }
+  }
+  return {id,question:q.q,entryQuestion:iq.q,entryAnswer:entryProvided?iq.o[chosen]:'Ответ не отмечен',exitAnswer:exitChosen===null?'Ещё нет первого ответа на выходе':q.o[exitChosen],entryProvided,exitAnswered:exitChosen!==null,comparable:true,exactSameQuestion:true,state,label};
+ });
+}
+function progressSummaryText(){
+ const rows=progressRows(),answered=learningProgress.firstExit.filter(x=>x!==null).length,b=learningProgress.baseline;
+ if(!answered)return 'Четыре вопроса повторяются на входе и выходе; пятый итоговый вопрос — новая ситуация. После ответа увидишь свою исходную идею рядом с первым ответом на выходе. Входной опрос не оценивается баллами.';
+ if(b&&['legacy-import','restored-no-baseline'].includes(b.origin))return 'Порядок заполнения этих сохранённых ответов неизвестен, поэтому автоматического вывода о прогрессе нет. Для нового урока можно начать новый круг с четырьмя одинаковыми вопросами.';
+ const comparable=rows.filter(r=>r.entryProvided&&r.exitAnswered),count=state=>rows.filter(r=>r.state===state).length;
+ if(!comparable.length)return 'Пока нет пары ответов на один и тот же вопрос для сравнения. Пропуск на входе не означает ошибку. Новый вопрос показывает понимание на выходе, но не измеряет прирост по входному опросу.';
+ return 'Сопоставлено '+comparable.length+' из 4 повторных вопросов. Новое понимание — '+count('improved')+'; подтвердилось — '+count('confirmed')+'; стоит разобрать — '+count('work')+'. Это не отметка и не автоматический вывод о достижении всех целей.';
+}
+function quizArchivesHTML(expand=false){
+ const records=(rows,title)=>!rows.length?'':'<h4>'+title+'</h4>'+rows.map((r,i)=>'<div class="lp-entry-item"><b>'+(i+1)+'. '+escapeHTML(r.q)+'</b><p>Мой ответ: '+escapeHTML(r.answer===null?'Ответ не отмечен':r.answer)+'</p></div>').join('');
+ return learningProgress.archives.map(a=>'<section class="lp-archive"><h3>'+escapeHTML(a.title)+'</h3><p class="note">Это прежние формулировки и выбранные тогда варианты, не ответы на новый квиз. Порядковые номера входа и выхода сами по себе не обозначают пары одинаковых вопросов.'+(a.firstExitKnown?'':' Последовательность прежних выходных ответов неизвестна: сохранённый выход не обязательно был первым.')+'</p>'+records(a.entry,'Вход — исходные вопросы и ответы')+records(a.firstExit,a.firstExitKnown?'Первый сохранённый выход — исходные вопросы и ответы':'Сохранённый выход — исходные вопросы и ответы')+records(a.training,'Сохранённая повторная тренировка')+'</section>').join('');
+}
+function quizArchivesText(){
+ return learningProgress.archives.map(a=>[a.title,'Прежние формулировки, без переинтерпретации по новому квизу.',a.firstExitKnown?'Удержан первый сохранённый выход.':'Последовательность выходных ответов неизвестна: сохранённый выход не обязательно был первым.',...[[a.entry,'Вход'],[a.firstExit,a.firstExitKnown?'Первый сохранённый выход':'Сохранённый выход'],[a.training,'Повторная тренировка']].flatMap(([rows,title])=>rows.length?[title,...rows.map((r,i)=>(i+1)+'. '+r.q+'\nМой ответ: '+(r.answer===null?'Ответ не отмечен':r.answer))]:[])].join('\n')).join('\n\n');
+}
+function progressCardsHTML(){
+ if(!learningProgress.firstExit.some(x=>x!==null))return '';
+ return progressRows().map(r=>'<article class="lp-card" data-progress-id="'+r.id+'"><h4>'+escapeHTML(r.question)+'</h4><div class="lp-pair"><div class="lp-answer"><b>На входе — моя гипотеза</b><p>'+escapeHTML(r.entryAnswer)+'</p></div><div class="lp-answer"><b>Первый ответ на выходе</b><p>'+escapeHTML(r.exitAnswer)+'</p></div></div><p class="lp-result" data-state="'+r.state+'">'+escapeHTML(r.label)+'</p>'+(!r.exactSameQuestion?'<p class="lp-source">Исходный вопрос на входе: '+escapeHTML(r.entryQuestion)+'</p>':'')+'</article>').join('');
+}
+function entryReviewHTML(){
+ const b=progressEntrySnapshot();return entryBank(b.revision).map((q,i)=>'<div class="lp-entry-item"><b>'+(i+1)+'. '+escapeHTML(q.q)+'</b><p>Мой ответ: '+escapeHTML(b.answers[i]===null?'Ответ не отмечен':q.o[b.answers[i]])+'</p></div>').join('');
+}
+function firstExitReviewHTML(){
+ return QUIZ.map((q,i)=>'<div class="lp-entry-item"><b>'+(i+1)+'. '+escapeHTML(q.q)+'</b><p>Первый ответ на выходе: '+escapeHTML(learningProgress.firstExit[i]===null?'Ещё нет первого ответа на выходе':q.o[learningProgress.firstExit[i]])+'</p></div>').join('');
+}
+function syncProgressReflection(){
+ $$('[data-progress-ws]').forEach(el=>{const value=worksheet.fields[el.dataset.progressWs];if(el.value!==value)el.value=value;});
+}
+function renderLearningProgress(){
+ output('learningProgressIntro','Повторяются вопросы о направлении трения покоя, его изменении при росте тяги, роликах и торможении. Новый вопрос — лодка в течении. Сравни варианты и свои объяснения.');
+ output('learningProgressCount','4 общих вопроса · 1 новый на выходе');
+ output('learningProgressSummary',progressSummaryText());
+ $('learningProgressCards').innerHTML=progressCardsHTML();$('entryAnswersReview').innerHTML=entryReviewHTML();
+ $('firstExitDetails').hidden=!learningProgress.firstExit.some(x=>x!==null);$('firstExitReview').innerHTML=firstExitReviewHTML();
+ $('quizArchiveBox').hidden=!learningProgress.archives.length;$('quizArchiveReview').innerHTML=quizArchivesHTML();
+ syncProgressReflection();
+}
+function renderLearningProgressMirror(){
+ $('wsLearningProgress').innerHTML='<div class="lp-heading"><h3>Мой прогресс: вход → выход</h3></div><p class="note">Сравнение удерживает первый выход; самооценку и доказательство ты пишешь сам(а) в полях выше.</p><p class="lp-summary">'+escapeHTML(progressSummaryText())+'</p>'+progressCardsHTML();
+ syncProgressReflection();
+}
+function learningProgressText(){
+ const b=progressEntrySnapshot(),lines=['ВХОД → ВЫХОД: МОЙ ПРОГРЕСС',b.origin==='draft'?'Вход пока не зафиксирован.':'Сохранён исходный вход.','Входные гипотезы — без баллов и отметки.'];
+ entryBank(b.revision).forEach((q,i)=>lines.push((i+1)+'. '+q.q+'\nМой ответ на входе: '+(b.answers[i]===null?'Ответ не отмечен':q.o[b.answers[i]])));
+ lines.push('','Все мои первые ответы на выходе — включая новую ситуацию');
+ QUIZ.forEach((q,i)=>lines.push((i+1)+'. '+q.q+'\nПервый ответ на выходе: '+(learningProgress.firstExit[i]===null?'Ещё нет первого ответа на выходе':q.o[learningProgress.firstExit[i]])));
+ lines.push('',progressSummaryText());
+ for(const r of progressRows())lines.push(r.question+'\nНа входе: '+r.entryAnswer+'\nПервый выход: '+r.exitAnswer+'\n'+r.label+(!r.exactSameQuestion?'\nИсходный вопрос: '+r.entryQuestion:''));
+ if(learningProgress.archives.length)lines.push('',quizArchivesText());
+ lines.push('Повторная тренировка не переписывает первый ответ на выходе. Самооценка и собственное объяснение — в разделе «Возвращение к цели».');
+ return lines.join('\n');
+}
+function learningProgressReportHTML(){
+ return '<section><h2>Мой прогресс: вход → выход</h2><p>'+escapeHTML(progressSummaryText())+'</p><h3>Все мои ответы на входе — без баллов и отметки</h3>'+entryReviewHTML()+'<h3>Все мои первые ответы на выходе — включая новую ситуацию</h3>'+firstExitReviewHTML()+progressRows().map(r=>'<div class="answer"><h3>'+escapeHTML(r.question)+'</h3><p><b>На входе:</b> '+escapeHTML(r.entryAnswer)+'\n<b>Первый ответ на выходе:</b> '+escapeHTML(r.exitAnswer)+'\n'+escapeHTML(r.label)+(!r.exactSameQuestion?'\nИсходный вопрос на входе: '+escapeHTML(r.entryQuestion):'')+'</p></div>').join('')+quizArchivesHTML(true)+'<p class="footnote">Сравниваются первые ответы на выходе; повторная тренировка не переписывает их. Новые вопросы и пропуски не выдаются за прирост. Входной опрос не является отметкой.</p></section>';
+}
+function startNewLearningCycle(){
+ learningProgress=freshLearningProgress(learningProgress.archives);entryRevision=ENTRY_REVISION;entryAnswers=ENTRY_QUIZ.map(()=>null);quiz=QUIZ.map(()=>null);
+ renderEntryQuiz();renderQuiz();switchTab('p0');save(true);$('entry-0-0').focus({preventScroll:true});
+}
+$$('[data-new-quiz-cycle]').forEach(button=>button.addEventListener('click',()=>{const dialog=$('newCycleDialog');if(!dialog.open)dialog.showModal();}));
+$('newCycleNo').addEventListener('click',()=>$('newCycleDialog').close());
+$('newCycleYes').addEventListener('click',()=>{$('newCycleDialog').close();startNewLearningCycle();});
+$$('[data-progress-ws]').forEach(el=>{
+ const update=()=>{const key=el.dataset.progressWs;worksheet.fields[key]=el.value.slice(0,wsElements[key].maxLength>0?wsElements[key].maxLength:40);wsElements[key].value=worksheet.fields[key];renderWorksheet();save(true);};
+ el.addEventListener('input',update);if(el.tagName==='SELECT')el.addEventListener('change',update);
+});
+
 // Electronic worksheet. Kept inside the app closure; no external storage or services.
 const WS_LABELS={name:'Имя / фамилия',group:'Класс / команда',date:'Дата',useful:'Пример полезного трения',harmful:'Пример мешающего трения',normal:'Нормальная реакция N, Н',limit:'Предел трения покоя, Н',f5:'Сила трения при тяге 5 Н, Н',f10:'Сила трения при тяге 10 Н, Н',f15:'Сила трения при тяге 15 Н, Н',boundary:'Состояние при тяге, равной пределу',incline:'Коэффициент μп при α₀ = 30°',massWhy:'Почему угол не зависит от массы',rolling:'Почему помогли шаровые опоры',drag:'Направление сопротивления воды',forces:'Три силы и оси в задаче о торможении',brakeLaw:'Законы и общая формула',acceleration:'Проекция ускорения aₓ, м/с²',speedM:'Начальная скорость, м/с',speedKm:'Начальная скорость, км/ч',verdict:'Вывод о знаке «40»',whyBrake:'Обоснование сравнения со знаком',surface:'Пара поверхностей практикума',muA:'Мой μА',muB:'Мой μБ',practiceConclusion:'Согласование двух способов и ограничения',goalResult:'Самооценка достижения цели',goalEvidence:'Доказательство достижения цели',question:'Вопрос учителю',homeLevel:'Выбранное домашнее задание',homeSolution:'Решение / план исследования'};
 const WS_CORE=['useful','harmful','normal','limit','f5','f10','f15','boundary','incline','rolling','drag','forces','acceleration','speedKm','verdict','muA','muB','practiceConclusion','goalResult','goalEvidence'];
@@ -1384,12 +1937,13 @@ function wsValueLabel(key){
 function escapeHTML(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function wsQuizText(){
  const done=quiz.filter(v=>v!==null).length,right=quiz.reduce((s,v,i)=>s+(v===QUIZ[i].a?1:0),0);
- return 'Простой итоговый квиз: отвечено '+done+' из 5; верно '+right+' из 5. Это проверка понимания, а не сумма баллов карты успеха.';
+ return 'Итоговый квиз: отвечено '+done+' из 5; верно '+right+' из 5. Это проверка понимания, а не сумма баллов листа рефлексии.';
 }
 function worksheetText(){
  const lines=['ТрибоЛаб — электронный бортовой журнал','Цель: объяснить, когда трение помогает и мешает; оценить торможение.',''];
  for(const [title,keys] of WS_SECTIONS){lines.push(title);for(const key of keys)lines.push(WS_LABELS[key]+': '+wsValueLabel(key));lines.push('');}
  lines.push(wsQuizText());QUIZ.forEach((q,i)=>lines.push((i+1)+'. '+q.q+'\nЦель: '+q.goal+'\nМой ответ: '+(quiz[i]===null?'Не отвечено':q.o[quiz[i]])));
+ lines.push('',learningProgressText());
  lines.push('','Числа можно сверить с моделью. Текстовые объяснения обсуждаются с учителем. Пустое поле не означает нулевую отметку.');
  return lines.join('\n');
 }
@@ -1398,7 +1952,7 @@ function worksheetReportBody(){
  for(const [title,keys] of WS_SECTIONS){s+='<section><h2>'+escapeHTML(title)+'</h2>';for(const key of keys)s+='<div class="answer"><h3>'+escapeHTML(WS_LABELS[key])+'</h3><p>'+escapeHTML(wsValueLabel(key))+'</p></div>';s+='</section>';}
  s+='<section><h2>Итоговый квиз — понимание целей</h2><p>'+escapeHTML(wsQuizText())+'</p>';
  QUIZ.forEach((q,i)=>{s+='<div class="answer"><h3>'+escapeHTML((i+1)+'. '+q.q)+'</h3><p class="goal">Цель: '+escapeHTML(q.goal)+'</p><p>Мой ответ: '+escapeHTML(quiz[i]===null?'Не отвечено':q.o[quiz[i]]);if(quiz[i]!==null)s+=' — '+(quiz[i]===q.a?'верно':'стоит повторить');s+='</p></div>';});
- return s+'</section><p class="footnote">Это индивидуальная запись, не автоматическая отметка. В 15 м тормозного пути не включён путь реакции. Два способа практикума определяют коэффициент трения покоя. Ответы из этого файла никуда автоматически не отправляются.</p>';
+ return s+'</section>'+learningProgressReportHTML()+'<p class="footnote">Это индивидуальная запись, не автоматическая отметка. В 15 м тормозного пути не включён путь реакции. Два способа практикума определяют коэффициент трения покоя. Ответы из этого файла никуда автоматически не отправляются.</p>';
 }
 const WS_REPORT_CSS='body{font:12pt/1.45 Arial,"Liberation Sans",sans-serif;max-width:900px;margin:30px auto;padding:0 22px;color:#262733}h1{color:#B22470;font-size:24pt}h2{font-size:16pt;color:#6E309F;border-bottom:1px solid #DBDDE9;padding-bottom:5px;break-after:avoid}h3{font-size:11pt;margin:0 0 4px;color:#626475}p{margin:0 0 12px;white-space:pre-wrap;overflow-wrap:anywhere}.answer{padding:8px 0;border-bottom:1px solid #eee;break-inside:avoid}.goal,.footnote,.subtitle{font-size:10pt;color:#626475}section{margin-top:22px}@media print{body{margin:0;max-width:none;padding:0}h1{font-size:21pt}h2,h1{color:#111}.answer p{color:#111}}';
 function worksheetHTML(){return '<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ТрибоЛаб — моя работа</title><style>'+WS_REPORT_CSS+'</style></head><body>'+worksheetReportBody()+'</body></html>';}
@@ -1406,7 +1960,7 @@ function renderWorksheet(){
  const count=WS_CORE.filter(k=>worksheet.fields[k].trim()).length;
  output('wsProgress','Заполнено '+count+' из '+WS_CORE.length+' опорных полей');
  output('wsSaveStatus',storageOK?'Автосохранение листа включено в этом браузере. Данные остаются на устройстве, в сеть не отправляются.':'Автосохранение недоступно. До закрытия страницы скачай результат или скопируй текст работы ниже.');
- output('wsQuizSummary',wsQuizText());output('wsExportText',worksheetText());
+ output('wsQuizSummary',wsQuizText());output('wsExportText',worksheetText());renderLearningProgressMirror();
 }
 function worksheetNumber(value){
  const s=String(value).trim().replace(',','.');if(!/^[+−-]?(?:\d+(?:\.\d*)?|\.\d+)$/.test(s))return null;
@@ -1448,9 +2002,9 @@ $('wsClear').addEventListener('click',()=>{$('wsClearConfirm').hidden=false;});
 $('wsClearNo').addEventListener('click',()=>{$('wsClearConfirm').hidden=true;});
 $('wsClearYes').addEventListener('click',()=>{worksheet=emptyWorksheet();hydrateWorksheet();renderWorksheet();$('wsClearConfirm').hidden=true;output('wsPracticeStatus','');output('wsCheckResult','Лист очищен. Квиз, протоколы, оценки и таймеры не изменены.');output('wsActionStatus','Очищены только поля электронного листа.');save(true);});
 $('wsImportPractice').addEventListener('click',()=>{
- const d=practice[surf];if(d.a.length!==3||d.b.length!==3||!d.revealed){output('wsPracticeStatus','Сначала выполни две серии в модуле 7, введи свои μА и μБ и сверь расчёты.');return;}
+ const d=practice[surf];if(d.a.length!==3||d.b.length!==3||!d.revealed){output('wsPracticeStatus','Сначала выполни две серии в практикуме, введи свои μА и μБ и сверь расчёты.');return;}
  const stats=practiceStats(),a=decimal(d.guessA),b=decimal(d.guessB);
- if(a===null||b===null||Math.abs(a-stats.a.mean)>.00500001||Math.abs(b-stats.b.mean)>.00500001){output('wsPracticeStatus','Сначала исправь свой расчёт в модуле 7. Программа не заменяет его готовым средним.');return;}
+ if(a===null||b===null||Math.abs(a-stats.a.mean)>.00500001||Math.abs(b-stats.b.mean)>.00500001){output('wsPracticeStatus','Сначала исправь свой расчёт в практикуме. Программа не заменяет его готовым средним.');return;}
  worksheet.fields.surface=SURF[surf].name;worksheet.fields.muA=d.guessA;worksheet.fields.muB=d.guessB;
  hydrateWorksheet();renderWorksheet();output('wsPracticeStatus','Скопированы твои проверенные результаты для пары «'+SURF[surf].name+'». Индивидуальный вывод напиши самостоятельно.');save();
 });
@@ -1468,16 +2022,104 @@ $('wsImportYes').addEventListener('click',()=>{if(!pendingWorksheetImport)return
 window.addEventListener('beforeprint',()=>{const ws=active==='p8';document.body.dataset.print=ws?'worksheet':'practice';if(ws)$('worksheetPrint').innerHTML=worksheetReportBody();});
 window.addEventListener('afterprint',()=>{delete document.body.dataset.print;});
 
+// Qualitative contact animation; accepted force models and chart scales are not altered.
+const RollingFormation=(()=>{
+ const END=8,OMEGA=.5,NS=$('rfScene').namespaceURI;
+ let time=0,running=false,ideal=false,showForces=true,lastPressure='';
+ const dots=[],heat=[],pressureArrows=[],contactPoints=[],layers=[];
+ const attr=(target,values)=>{const el=typeof target==='string'?$(target):target;for(const [k,v] of Object.entries(values))el.setAttribute(k,String(v));};
+ const text=(id,value)=>{if($(id).textContent!==value)$(id).textContent=value;};
+ const node=(parent,name,attrs)=>{const el=document.createElementNS(NS,name);attr(el,attrs);$(parent).appendChild(el);return el;};
+ const f=x=>Number(x.toFixed(3));
+ function model(N,k,R,t,withoutLoss=false){
+  positive(N,R);requireNumbers(k,t);if(k<0||t<0||typeof withoutLoss!=='boolean')throw new RangeError('Неверные параметры модели качения');
+  const usedK=withoutLoss?0:k,elapsed=Math.min(t,END),theta=OMEGA*elapsed,s=R*theta,moment=N*usedK,force=moment/R;
+  return {N,k:usedK,sourceK:k,R,t:elapsed,theta,s,v:OMEGA*R,omega:OMEGA,moment,force,loss:moment*theta,ended:elapsed>=END,ideal:withoutLoss};
+ }
+ function geometry(m){
+  const radius=74+14*(m.R-.1)/.9,cx=130+radius*m.theta,base=248,depth=6+7*(m.N-100)/4900,spread=radius*.65;
+  const bias=m.k===0?0:.35+.6*Math.sqrt(clamp(m.k/m.R/.2,0,1));
+  const ground=x=>{const z=(x-cx)/spread;return base+depth*Math.exp(-z*z)+(m.k===0?0:.48*depth*Math.exp(-(((z+2)/1.8)**2)));};
+  const cy=ground(cx)-radius+7+3*(m.N-100)/4900;
+  return {radius,cx,cy,base,depth,spread,bias,pressureCentre:260+150*bias/5,ground};
+ }
+ function pressureShape(m,g){
+  const signature=[m.N,m.k,m.R,m.ideal].join('|');if(signature===lastPressure)return;lastPressure=signature;
+  const density=u=>(1-u*u)*(1+g.bias*u),values=[];
+  let max=0;for(let i=0;i<=100;i++){const u=-1+i/50,p=density(u);max=Math.max(max,p);values.push([110+i*3,p]);}
+  const d=values.map(([x,p],i)=>(i?'L':'M')+f(x)+' '+f(205-92*p/max)).join('');
+  attr('rfPressureArea',{d:d+'L410 205H110Z',fill:m.k===0?'#ECF5FA':'#FDEDF6',stroke:m.k===0?'#476A87':'#C83083'});
+  pressureArrows.forEach((el,i)=>{const u=-.9+i*.1125,x=260+150*u,h=92*density(u)/max,y=205-h;attr(el,{d:'M'+f(x)+' 205V'+f(y)+'m-3 5 3-5 3 5',stroke:m.k===0?'#55778D':'#C83083'});});
+  const x=g.pressureCentre;
+  attr('rfNormalArrow',{d:'M'+f(x)+' 205V59m-8 13 8-13 8 13'});attr('rfNormalLabel',{x:f(x+14),y:70});
+  attr('rfArmLines',{d:'M260 215V283M'+f(x)+' 215V283M260 277H'+f(x)+'M260 272V282M'+f(x)+' 272V282'});
+  attr('rfArmLabel',{x:f((260+x)/2),y:315});text('rfArmLabel',m.k===0?'k = 0':'k');
+  $('rfPressureKey').style.background=m.k===0?'#55778D':'#C83083';
+  text('rfEnergyStepTitle',m.k===0?'Возврат энергии.':'Потери энергии.');
+  text('rfEnergyStepText',m.k===0?'В идеально упругом контакте затраченная на деформацию энергия возвращается полностью.':'Восстановление возвращает не всю затраченную энергию; часть переходит во внутреннюю энергию.');
+  text('rfMomentStepTitle',m.k===0?'Нет сопротивления качению.':'Сопротивление.');
+  text('rfMomentStepText',m.k===0?'Распределение симметрично, N проходит через проекцию центра: k = 0, M = 0 и Fкач = 0.':'N смещена вперёд: момент Nk направлен против вращения. Для сравнения с тягой используют Fкач ≈ Nk/R.');
+  text('rfContactExplanation',m.k===0?'Без потерь нормальное давление симметрично. N проходит под центром: плечо и момент сопротивления равны нулю.':'Тонкие стрелки — реакции участков, а не отдельная новая сила. При потерях передняя часть нагружена сильнее: их равнодействующая N смещена вперёд на плечо k.');
+ }
+ function paint(m){
+  const g=geometry(m),points=[];for(let x=0;x<=640;x+=8)points.push([x,g.ground(x)]);
+  const line=points.map(([x,y],i)=>(i?'L':'M')+f(x)+' '+f(y)).join('');
+  attr('rfGroundPath',{d:line+'L640 330H0Z'});
+  attr('rfClipPath',{d:'M0 0H640'+[...points].reverse().map(([x,y])=>'L'+f(x)+' '+f(y)).join('')+'Z'});
+  attr('rfWheel',{transform:'translate('+f(g.cx)+' '+f(g.cy)+') scale('+f(g.radius/80)+')'});
+  attr('rfRotor',{transform:'rotate('+f(m.theta*180/Math.PI)+')'});
+  layers.forEach((el,i)=>{const y0=267+i*18,atten=.75-i*.2;attr(el,{d:points.map(([x,y],j)=>(j?'L':'M')+x+' '+f(y0+(y-g.base)*atten)).join('')});});
+  dots.forEach((el,i)=>{const x=14+i*24;attr(el,{cy:f(g.ground(x)+9),fill:Math.abs(x-g.cx)<g.radius*.52?'#AC739D':'#AA96BA'});});
+  heat.forEach((el,i)=>{const x=24+i*45,z=(g.cx-x)/g.radius,opacity=m.k===0||z<=.2?0:clamp((z-.2)*2,0,1)*Math.exp(-z/1.3)*1.6;attr(el,{cy:f(g.ground(x)+26),opacity:f(opacity)});});
+  const contact=[];for(let dx=-g.radius*.8;dx<=g.radius*.8;dx+=2){const x=g.cx+dx,bottom=g.cy+Math.sqrt(g.radius*g.radius-dx*dx);if(bottom>=g.ground(x))contact.push([x,g.ground(x)]);}
+  attr('rfContactPatch',{d:contact.map(([x,y],i)=>(i?'L':'M')+f(x)+' '+f(y)).join(''),stroke:m.k===0?'#6A92AA':'#E24096'});
+  // Negative sweep is counter-clockwise in SVG: it opposes the clockwise rotor.
+  const a=Math.PI/6,b=-Math.PI*11/18,r=g.radius+15,x1=g.cx+r*Math.cos(a),y1=g.cy+r*Math.sin(a),x2=g.cx+r*Math.cos(b),y2=g.cy+r*Math.sin(b);
+  attr('rfMomentArc',{d:'M'+f(x1)+' '+f(y1)+'A'+f(r)+' '+f(r)+' 0 0 0 '+f(x2)+' '+f(y2),visibility:m.k===0?'hidden':'visible'});
+  const tx=Math.sin(b),ty=-Math.cos(b),nx=-ty,ny=tx;
+  attr('rfMomentTip',{d:'M'+f(x2)+' '+f(y2)+'L'+f(x2-13*tx+5*nx)+' '+f(y2-13*ty+5*ny)+'L'+f(x2-13*tx-5*nx)+' '+f(y2-13*ty-5*ny)+'Z',visibility:m.k===0?'hidden':'visible'});
+  text('rfMomentLabel',m.k===0?'M = 0':'Mсопр');
+  pressureShape(m,g);
+  contactPoints.forEach((el,i)=>{const u=(i-3)*.32-m.theta*.7,x=260+150*u,opacity=clamp((1.25-Math.abs(u))/.2,0,1),deform=8*Math.exp(-u*u)+(m.k===0?0:4*Math.exp(-(((u+1.1)/1.1)**2)));attr(el,{cx:f(x),cy:f(219+deform),opacity:f(opacity),fill:m.k===0?'#60879F':u<-.15?'#C36B9D':'#AA85B6'});});
+ }
+ function snapshot(){return {...model(read('rN'),read('rk'),read('rR'),time,ideal),running,showForces,duration:END};}
+ function render(){
+  const m=snapshot();paint(m);
+  $('rfMomentGroup').style.display=showForces?'':'none';$('rfNormalGroup').style.display=showForces?'':'none';
+  attr('rfReal',{'aria-pressed':!ideal});attr('rfIdeal',{'aria-pressed':ideal});
+  $('rfPlay').disabled=!motion;attr('rfPlay',{'aria-pressed':running&&motion&&!m.ended});
+  text('rfPlay',m.ended?'Повторить качение':running?'Пауза качения':time>0?'Продолжить качение':'Показать качение');
+  text('rfStatus',m.ended?'Конец участка: стоп-кадр, не остановка колеса. Повтор — только по вашей команде.':!motion?'Общая пауза. Для движения включите анимацию вверху страницы.':running?'Колесо катится вправо, момент сопротивления направлен против вращения.':time>0?'Качение на паузе: рассмотрите деформацию и положение реакции опоры.':'Показ готов. Нажмите «Показать качение» или сравните контакт без потерь.');
+  if(ideal&&running&&motion&&!m.ended)text('rfStatus','Идеально упругое качение: давление симметрично, сопротивление качению равно нулю.');
+  text('rfModeNote',ideal?'Сравнение без потерь: только в анимации k = 0, M = 0 и Fкач = 0. Ползунки и основной график ниже сохраняют параметры реального контакта.':'Анимация использует N = '+n(m.N,0)+' Н, kкач = '+n(m.k*1000,1)+' мм и R = '+n(m.R,2)+' м из ползунков ниже. Геометрия деформации — качественная иллюстрация, не её численный расчёт.');
+  text('rfKValue','k = '+n(m.k*1000,1)+' мм');text('rfMomentValue','M = Nk = '+n(m.moment,2)+' Н·м');
+  text('rfForceValue',(m.k===0?'':'← ')+'Fкач ≈ M/R = '+n(m.force,2)+' Н');text('rfEnergyValue','ΔE = Mθ = '+n(m.loss,1)+' Дж');
+  $('rfProgress').style.width=(m.t/END*100)+'%';
+ }
+ function advance(dt){requireNumbers(dt);if(dt<0)throw new RangeError('Время неотрицательно');if(!running||time>=END)return;time=Math.min(END,time+dt);if(time>=END)running=false;render();}
+ function parametersChanged(){time=0;running=false;lastPressure='';}
+ for(let i=0;i<3;i++)layers.push(node('rfMaterialMarks','path',{fill:'none',stroke:'#B6A3C4','stroke-width':1.2}));
+ for(let i=0;i<27;i++)dots.push(node('rfMaterialMarks','circle',{cx:14+i*24,cy:257,r:2.5,fill:'#AA96BA'}));
+ for(let i=0;i<14;i++)heat.push(node('rfHeatMarks','circle',{cx:24+i*45,cy:275,r:4,fill:'#C84686',opacity:0}));
+ for(let i=0;i<17;i++)pressureArrows.push(node('rfPressureArrows','path',{fill:'none',stroke:'#C83083','stroke-width':1.7,'stroke-linecap':'round'}));
+ for(let i=0;i<23;i++)contactPoints.push(node('rfContactPoints','circle',{cx:0,cy:219,r:3,fill:'#AA85B6',opacity:0}));
+ $('rfPlay').addEventListener('click',()=>{if(!motion)return;if(time>=END){time=0;running=true;}else running=!running;render();});
+ $('rfReplay').addEventListener('click',()=>{time=0;running=true;render();});
+ for(const [id,mode] of [['rfReal',false],['rfIdeal',true]])$(id).addEventListener('click',()=>{if(ideal===mode)return;ideal=mode;parametersChanged();render();});
+ $('rfShowForces').addEventListener('change',()=>{showForces=$('rfShowForces').checked;render();});
+ return Object.freeze({model,render,advance,parametersChanged,snapshot,geometryInfo:(N,k,R,t,idealMode=false)=>{const m=model(N,k,R,t,idealMode),g=geometry(m);return {radius:g.radius,cx:g.cx,cy:g.cy,bias:g.bias,pressureCentre:g.pressureCentre,groundAtCentre:g.ground(g.cx),s:m.s,theta:m.theta};}});
+})();
+
 // Public read-only diagnostic surface for repeatable unit/browser checks.
-window.TriboLab=Object.freeze({version:'3.3',contentRevision:CONTENT_REVISION,visualRevision:VISUAL_REVISION,quizRevision:QUIZ_REVISION,criteriaRevision:CRITERIA_REVISION,G,physics:Object.freeze({horizontal,inclined,rolling,drag,braking,planeGeometry,advanceTrial,freshTrial,intervalStats,decimal}),Countdown,
- getState:()=>JSON.parse(JSON.stringify({active,motion,road,surf,controls:Object.fromEntries(RANGE_IDS.map(id=>[id,read(id)])),angle:readAngle(),car,quiz,scores,reflection,worksheet,practice,trialA,trialB,view,animation:{block:blockShot(),incline:inclineShot(),practiceA:practiceShot('a'),practiceB:practiceShot('b'),phase1,phase2,phase7A,phase7B,run1,run2},timers:{task:taskTimer.snapshot(),practice:practiceTimer.snapshot()},storageOK})),
- shotMotion,protocolCSV,worksheetHTML,worksheetText,getQuiz:()=>JSON.parse(JSON.stringify(QUIZ))});
+window.TriboLab=Object.freeze({version:'3.7',labRevision:LAB_REVISION,contentRevision:CONTENT_REVISION,visualRevision:VISUAL_REVISION,quizRevision:QUIZ_REVISION,criteriaRevision:CRITERIA_REVISION,G,physics:Object.freeze({horizontal,inclined,rolling,drag,braking,planeGeometry,advanceTrial,freshTrial,intervalStats,decimal}),Countdown,
+ getState:()=>JSON.parse(JSON.stringify({active,motion,road,surf,controls:Object.fromEntries(RANGE_IDS.map(id=>[id,read(id)])),angle:readAngle(),car,quiz,entryQuiz:{revision:entryRevision,answers:entryAnswers},learningProgress,scores,reflection,worksheet,practice,trialA,trialB,view,animation:{block:blockShot(),incline:inclineShot(),practiceA:practiceShot('a'),practiceB:practiceShot('b'),phase1,phase2,phase7A,phase7B,run1,run2},timers:{task:taskTimer.snapshot(),practice:practiceTimer.snapshot()},storageOK})),
+ rolling:Object.freeze({model:RollingFormation.model,getState:RollingFormation.snapshot,geometry:RollingFormation.geometryInfo}),charts:Object.freeze({scale:Charts.scale,fixedScale:Charts.fixedScale,getInfo:Charts.getInfo}),getEntryQuiz:()=>JSON.parse(JSON.stringify(entryBank())),getLearningProgress:()=>JSON.parse(JSON.stringify({...learningProgress,rows:progressRows(),summary:progressSummaryText()})),shotMotion,protocolCSV,worksheetHTML,worksheetText,getQuiz:()=>JSON.parse(JSON.stringify(QUIZ))});
 load();
 const hash=location.hash.slice(1);if(PANEL_IDS.includes(hash))active=hash;
 $('reflection').value=reflection;$('guessA7').value=practice[surf].guessA;$('guessB7').value=practice[surf].guessB;$('conclusion7').value=practice[surf].conclusion;
-hydrateWorksheet();syncView();renderQuiz();renderScores();renderWorksheet();motionButton();update1();update2();updateRolling();drawDrag();updateBrake();renderPractice();switchTab(active);
+hydrateWorksheet();syncView();renderEntryQuiz();renderQuiz();renderScores();renderWorksheet();motionButton();update1();update2();updateRolling();drawDrag();updateBrake();renderPractice();switchTab(active);
 setInterval(renderTimers,100);requestAnimationFrame(frame);
 })();
 </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a5ce0deddf325837',t:'MTc5NTA3OTEzOQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a5ce0deddf325837',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
